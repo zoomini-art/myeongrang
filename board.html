@@ -198,6 +198,38 @@ footer{background:var(--ink);color:#fff;padding:4.5rem 0 2.2rem}
 .mag-mini small{font-family:'Noto Sans KR';font-weight:400;font-size:.72rem;margin-top:.4rem;letter-spacing:0}
 @media(max-width:720px){.mag-feature{grid-template-columns:1fr;gap:1.8rem}.mag-cover{max-width:260px;margin:0 auto}}
 
+
+/* BOARD LIST */
+.board-toolbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.3rem}
+.b-filters{display:flex;gap:.45rem;flex-wrap:wrap}
+.b-filters button{padding:.5rem .95rem;border:1.5px solid var(--line);background:var(--paper);border-radius:999px;font-family:inherit;font-size:.84rem;font-weight:500;color:var(--ink-soft);cursor:pointer;transition:all .2s}
+.b-filters button.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn-sm{padding:.6rem 1.2rem;font-size:.88rem}
+.post-list{border-top:2px solid var(--ink)}
+.post-row{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;padding:1rem .6rem;border-bottom:1px solid var(--line);cursor:pointer;transition:background .15s}
+.post-row:hover{background:var(--bg)}
+.pr-cat{font-size:.72rem;font-weight:600;color:#fff;padding:.22rem .6rem;border-radius:999px;white-space:nowrap}
+.pr-title{font-size:.97rem;font-weight:500;line-height:1.45}
+.pr-cnt{color:var(--orange);font-weight:700}
+.pr-meta{font-size:.8rem;color:var(--ink-soft);white-space:nowrap}
+.board-loading{padding:2.2rem;text-align:center;color:var(--ink-soft);font-size:.92rem}
+.back-btn{background:none;border:none;font-family:inherit;font-size:.9rem;font-weight:600;color:var(--blue);cursor:pointer;margin-bottom:1.2rem;padding:0}
+.post-detail{background:var(--bg);border-radius:16px;padding:1.8rem 2rem;margin-bottom:1.6rem}
+.pd-cat{display:inline-block;font-size:.72rem;font-weight:600;color:#fff;padding:.22rem .6rem;border-radius:999px;margin-bottom:.7rem}
+.pd-head h2{font-size:1.35rem;font-weight:800;letter-spacing:-.01em;margin-bottom:.4rem}
+.pd-meta{font-size:.84rem;color:var(--ink-soft);margin-bottom:1.1rem}
+.pd-body{font-size:.95rem}
+.markdown p{margin-bottom:.8rem}
+.markdown ul,.markdown ol{margin:.4rem 0 .9rem 1.3rem}
+.markdown a{color:var(--blue)}
+.cmt-title{font-size:1.02rem;font-weight:700;margin:1.4rem 0 .8rem}
+.cmt{border:1px solid var(--line);border-radius:12px;padding:1rem 1.2rem;margin-bottom:.8rem;background:var(--paper)}
+.cmt-meta{font-size:.8rem;color:var(--ink-soft);margin-bottom:.5rem}
+.quick-ask{margin-top:3.2rem;padding-top:2.4rem;border-top:1.5px solid var(--line)}
+.quick-ask h3{font-size:1.15rem;font-weight:800;margin-bottom:.4rem}
+.qa-desc{font-size:.9rem;color:var(--ink-soft);margin-bottom:1.2rem}
+@media(max-width:640px){.post-row{grid-template-columns:1fr;gap:.3rem}.pr-cat{justify-self:start}}
+
 /* BOARD PAGE */
 .board-head{padding:7.5rem 0 2.5rem;background:var(--bg)}
 .board-head .sec-tag{color:var(--blue);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;font-family:'Poppins'}
@@ -239,26 +271,130 @@ footer{background:var(--ink);color:#fff;padding:4.5rem 0 2.2rem}
 <section class="board-body">
   <div class="wrap">
     <div class="board-box">
-      <div class="board-note"><b>이용 안내</b> · 아래 입력창에 글을 남기면 연구소가 확인 후 답글을 드립니다. 처음 글을 쓰실 때 GitHub 로그인 창이 뜨면 안내에 따라 진행해 주세요.</div>
-      <script src="https://giscus.app/client.js"
-        data-repo="zoomini-art/myeongrang"
-        data-repo-id="R_kgDOS4M_nQ"
-        data-category="자유게시판"
-        data-category-id="DIC_kwDOS4M_nc4C-_sI"
-        data-mapping="specific"
-        data-term="협업·참여 문의 게시판"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="light"
-        data-lang="ko"
-        crossorigin="anonymous"
-        async>
-      </script>
+
+      <!-- 목록 -->
+      <div id="list-view">
+        <div class="board-toolbar">
+          <div class="b-filters" id="bFilters">
+            <button class="active" data-cat="">전체</button>
+          </div>
+          <a class="btn btn-primary btn-sm" href="https://github.com/zoomini-art/myeongrang/discussions/new/choose" target="_blank" rel="noopener">새 글 쓰기 →</a>
+        </div>
+        <div id="postList" class="post-list"><div class="board-loading">게시물을 불러오는 중…</div></div>
+      </div>
+
+      <!-- 상세 -->
+      <div id="detail-view" style="display:none">
+        <button class="back-btn" onclick="showList()">← 목록으로</button>
+        <article class="post-detail">
+          <div class="pd-head">
+            <span class="pd-cat" id="dCat"></span>
+            <h2 id="dTitle"></h2>
+            <div class="pd-meta" id="dMeta"></div>
+          </div>
+          <div class="pd-body markdown" id="dBody"></div>
+        </article>
+        <h3 class="cmt-title" id="dCmtCount"></h3>
+        <div id="dComments"></div>
+        <a class="btn btn-ghost btn-sm" id="dReplyLink" href="#" target="_blank" rel="noopener">GitHub에서 답글 달기 →</a>
+      </div>
+
+      <!-- 빠른 문의 -->
+      <div class="quick-ask">
+        <h3>빠른 문의 남기기</h3>
+        <p class="qa-desc">간단한 문의는 아래 입력창에 바로 남겨주세요. GitHub 계정으로 로그인하면 됩니다(무료 가입).</p>
+        <script src="https://giscus.app/client.js"
+          data-repo="zoomini-art/myeongrang"
+          data-repo-id="R_kgDOS4M_nQ"
+          data-category="자유게시판"
+          data-category-id="DIC_kwDOS4M_nc4C-_sI"
+          data-mapping="specific"
+          data-term="협업·참여 문의 게시판"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="light"
+          data-lang="ko"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </div>
+
     </div>
   </div>
 </section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.5/purify.min.js"></script>
+<script>
+const REPO='zoomini-art/myeongrang';
+const CAT_COLORS={'공지사항':'var(--orange)','자유게시판':'var(--blue)','질문과 답변':'#7B61FF','아이디어·제안':'var(--yellow)','설문조사':'var(--teal)','연구·작업 공유':'#1FA45B'};
+let POSTS=[];
+
+function fmtDate(s){const d=new Date(s);return d.getFullYear()+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'+String(d.getDate()).padStart(2,'0');}
+
+async function loadList(){
+  try{
+    const r=await fetch('https://api.github.com/repos/'+REPO+'/discussions?per_page=50',{headers:{Accept:'application/vnd.github+json'}});
+    if(!r.ok) throw new Error(r.status);
+    POSTS=await r.json();
+    renderFilters();renderList('');
+  }catch(e){
+    document.getElementById('postList').innerHTML='<div class="board-loading">목록을 불러오지 못했습니다. <a href="https://github.com/'+REPO+'/discussions" target="_blank" rel="noopener">GitHub에서 보기 →</a></div>';
+  }
+}
+function renderFilters(){
+  const cats=[...new Set(POSTS.map(p=>p.category.name))];
+  const box=document.getElementById('bFilters');
+  cats.forEach(c=>{const b=document.createElement('button');b.textContent=c;b.dataset.cat=c;box.appendChild(b);});
+  box.addEventListener('click',e=>{
+    if(e.target.tagName!=='BUTTON')return;
+    box.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+    e.target.classList.add('active');renderList(e.target.dataset.cat);
+  });
+}
+function renderList(cat){
+  const items=POSTS.filter(p=>!cat||p.category.name===cat);
+  const el=document.getElementById('postList');
+  if(!items.length){el.innerHTML='<div class="board-loading">게시물이 없습니다.</div>';return;}
+  el.innerHTML=items.map(p=>
+    '<div class="post-row" onclick="showPost('+p.number+')">'+
+      '<span class="pr-cat" style="background:'+(CAT_COLORS[p.category.name]||'var(--ink-soft)')+'">'+p.category.name+'</span>'+
+      '<span class="pr-title">'+escapeHtml(p.title)+(p.comments?' <b class="pr-cnt">['+p.comments+']</b>':'')+'</span>'+
+      '<span class="pr-meta">'+escapeHtml(p.user.login)+' · '+fmtDate(p.created_at)+'</span>'+
+    '</div>').join('');
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+function md(s){return DOMPurify.sanitize(marked.parse(s||''));}
+
+async function showPost(n){
+  const p=POSTS.find(x=>x.number===n);if(!p)return;
+  document.getElementById('list-view').style.display='none';
+  document.getElementById('detail-view').style.display='block';
+  document.getElementById('dCat').textContent=p.category.name;
+  document.getElementById('dCat').style.background=CAT_COLORS[p.category.name]||'var(--ink-soft)';
+  document.getElementById('dTitle').textContent=p.title;
+  document.getElementById('dMeta').textContent=p.user.login+' · '+fmtDate(p.created_at);
+  document.getElementById('dBody').innerHTML=md(p.body);
+  document.getElementById('dReplyLink').href=p.html_url;
+  document.getElementById('dCmtCount').textContent='댓글 '+p.comments+'개';
+  const box=document.getElementById('dComments');box.innerHTML=p.comments?'<div class="board-loading">댓글 불러오는 중…</div>':'';
+  if(p.comments){
+    try{
+      const r=await fetch('https://api.github.com/repos/'+REPO+'/discussions/'+n+'/comments?per_page=50',{headers:{Accept:'application/vnd.github+json'}});
+      const cs=await r.json();
+      box.innerHTML=cs.map(c=>'<div class="cmt"><div class="cmt-meta"><b>'+escapeHtml(c.user.login)+'</b> · '+fmtDate(c.created_at)+'</div><div class="markdown">'+md(c.body)+'</div></div>').join('');
+    }catch(e){box.innerHTML='';}
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function showList(){
+  document.getElementById('detail-view').style.display='none';
+  document.getElementById('list-view').style.display='block';
+}
+loadList();
+</script>
 
 <footer id="contact">
   <div class="wrap">
