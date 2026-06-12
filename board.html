@@ -208,6 +208,9 @@ footer{background:var(--ink);color:#fff;padding:4.5rem 0 2.2rem}
 .post-list{border-top:2px solid var(--ink)}
 .post-row{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;padding:1rem .6rem;border-bottom:1px solid var(--line);cursor:pointer;transition:background .15s}
 .post-row:hover{background:var(--bg)}
+.post-row.notice{background:rgba(255,183,0,.07)}
+.post-row.notice .pr-title{font-weight:700}
+.post-row.notice:hover{background:rgba(255,183,0,.13)}
 .pr-cat{font-size:.72rem;font-weight:600;color:#fff;padding:.22rem .6rem;border-radius:999px;white-space:nowrap}
 .pr-title{font-size:.97rem;font-weight:500;line-height:1.45}
 .pr-cnt{color:var(--orange);font-weight:700}
@@ -356,7 +359,7 @@ async function loadList(){
   try{
     const r=await fetch('https://api.github.com/repos/'+REPO+'/discussions?per_page=50',{headers:{Accept:'application/vnd.github+json'}});
     if(!r.ok) throw new Error(r.status);
-    POSTS=await r.json();POSTS.sort((a,b)=>new Date(b.created_at)-new Date(a.created_at));
+    POSTS=await r.json();POSTS.sort((a,b)=>{const na=a.category.name==='공지사항'?1:0,nb=b.category.name==='공지사항'?1:0;if(na!==nb)return nb-na;return new Date(b.created_at)-new Date(a.created_at);});
     renderFilters();renderList('');
   }catch(e){
     document.getElementById('postList').innerHTML='<div class="board-loading">목록을 불러오지 못했습니다. <a href="https://github.com/'+REPO+'/discussions" target="_blank" rel="noopener">GitHub에서 보기 →</a></div>';
@@ -377,9 +380,9 @@ function renderList(cat){
   const el=document.getElementById('postList');
   if(!items.length){el.innerHTML='<div class="board-loading">게시물이 없습니다.</div>';return;}
   el.innerHTML=items.map(p=>
-    '<div class="post-row" onclick="showPost('+p.number+')">'+
+    '<div class="post-row'+(p.category.name==='공지사항'?' notice':'')+'" onclick="showPost('+p.number+')">'+
       '<span class="pr-cat" style="background:'+(CAT_COLORS[p.category.name]||'var(--ink-soft)')+'">'+p.category.name+'</span>'+
-      '<span class="pr-title">'+escapeHtml(p.title)+(p.comments?' <b class="pr-cnt">['+p.comments+']</b>':'')+'</span>'+
+      '<span class="pr-title">'+(p.category.name==='공지사항'?'📌 ':'')+escapeHtml(p.title)+(p.comments?' <b class="pr-cnt">['+p.comments+']</b>':'')+'</span>'+
       '<span class="pr-meta">'+escapeHtml(p.user.login)+' · '+fmtDate(p.created_at)+'</span>'+
     '</div>').join('');
 }
