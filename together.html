@@ -5,8 +5,8 @@
 <meta name="naver-site-verification" content="0130a3472d3ab55e6b2dba3c266903606d4f85e6" />
 <meta name="google-site-verification" content="RcX3PfuiVm8HHUHPOlrzOU8XJQzFRQUss5pne32WckY" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>협업·문의 | 명랑사회연구소</title>
-<meta name="description" content="명랑사회연구소 협업·의뢰 문의 게시판입니다. 공동연구, 정책용역, 연구원 지원, 강연·자문 문의를 가입 없이 남길 수 있습니다.">
+<title>함께하기 | 명랑사회연구소</title>
+<meta name="description" content="명랑사회연구소 함께하기 게시판 — 구독자와 독자가 자유롭게 이야기하는 공간입니다. 가입 없이 글을 남길 수 있습니다.">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -152,9 +152,9 @@ footer{background:var(--ink);color:#fff;padding:4.5rem 0 2.2rem}
 
 <section class="board-head">
   <div class="wrap">
-    <span class="sec-tag">협업·문의 · For Partners</span>
-    <h1>협업·문의</h1>
-    <p>공동연구·협업 제안, 정책용역·연구 의뢰, 연구원 지원, 강연·자문·인터뷰 요청을 남기는 업무 전용 게시판입니다. <b>가입 없이 이름과 비밀번호만으로</b> 쓸 수 있고, 의뢰 내용은 '비밀글'로 등록하시면 연구소와 본인만 볼 수 있습니다. 이메일을 선호하시면 <a href="mailto:justice_park@kakao.com">justice_park@kakao.com</a> 으로 보내주세요. 자유로운 이야기는 <a href="together.html">함께하기 게시판</a>을 이용해 주세요.</p>
+    <span class="sec-tag">함께하기 · Community</span>
+    <h1>함께하기</h1>
+    <p>월간 「명랑사회」 독자와 구독자의 공간입니다. 읽은 감상, 궁금한 것, 다뤄줬으면 하는 질문 — 무엇이든 <b>가입 없이 이름과 비밀번호만으로</b> 남길 수 있습니다. 아직 구독 전이라면 <a href="subscribe.html">여기서 구독</a>하실 수 있어요. 공동연구·의뢰 등 업무 문의는 <a href="board.html">협업·문의 게시판</a>을 이용해 주세요.</p>
   </div>
 </section>
 
@@ -208,10 +208,10 @@ footer{background:var(--ink);color:#fff;padding:4.5rem 0 2.2rem}
         <p class="qa-desc">가입 없이 바로 등록됩니다. 등록할 때 정한 비밀번호로 나중에 글을 삭제할 수 있습니다. '비밀글'에 체크하면 연구소와 본인만 볼 수 있습니다.</p>
         <div class="w-field"><label>카테고리</label>
           <select id="wCat">
-            <option value="공동연구·협업 제안">공동연구·협업 제안</option>
-            <option value="연구 의뢰·정책용역">연구 의뢰·정책용역</option>
-            <option value="연구원 지원">연구원 지원</option>
-            <option value="강연·자문·인터뷰">강연·자문·인터뷰</option>
+            <option value="자유게시판">자유게시판</option>
+            <option value="독자 감상">독자 감상</option>
+            <option value="질문과 답변">질문과 답변</option>
+            <option value="아이디어·제안">아이디어·제안</option>
           </select>
         </div>
         <div class="w-field"><label>제목</label><input type="text" id="wTitle" maxlength="120" placeholder="제목을 입력하세요"></div>
@@ -220,7 +220,7 @@ footer{background:var(--ink);color:#fff;padding:4.5rem 0 2.2rem}
           <div class="w-field"><label>이름</label><input type="text" id="wAuthor" maxlength="24" placeholder="이름 또는 별명"></div>
           <div class="w-field"><label>비밀번호 <small style="font-weight:400;color:var(--ink-soft)">(수정·삭제용, 4자 이상)</small></label><input type="password" id="wPw" maxlength="30"></div>
         </div>
-        <label class="w-check"><input type="checkbox" id="wPrivate"> 비밀글 (연구소와 나만 볼 수 있어요 — 비공개 문의는 여기에 체크)</label>
+        <label class="w-check"><input type="checkbox" id="wPrivate"> 비밀글 (연구소와 나만 볼 수 있어요)</label>
         <div class="hp"><input type="text" id="hpField" tabindex="-1" autocomplete="off"></div>
         <button class="btn btn-primary btn-sm" id="wSubmit" onclick="submitPost()">게시판에 등록 →</button>
       </div>
@@ -241,10 +241,10 @@ footer{background:var(--ink);color:#fff;padding:4.5rem 0 2.2rem}
 const SUPABASE_URL = 'https://tlgvzvhxdkfgwcbjnyeg.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_UxMuTKjQqXcwvMdk_JNDwg_jy6Dbk9Z';
 
-const BOARD='collab'; // 이 페이지의 게시판: 협업·문의
-const CATS=['공동연구·협업 제안','연구 의뢰·정책용역','연구원 지원','강연·자문·인터뷰','공지사항'];
-const CAT_COLORS={'공지사항':'var(--orange)','공동연구·협업 제안':'var(--blue)','연구 의뢰·정책용역':'#7B61FF','연구원 지원':'#1FA45B','강연·자문·인터뷰':'var(--teal)'};
-const LIGHT_CATS=['강연·자문·인터뷰'];
+const BOARD='together'; // 이 페이지의 게시판: 함께하기
+const CATS=['자유게시판','독자 감상','질문과 답변','아이디어·제안','공지사항'];
+const CAT_COLORS={'공지사항':'var(--orange)','자유게시판':'var(--blue)','독자 감상':'var(--teal)','질문과 답변':'#7B61FF','아이디어·제안':'var(--yellow)'};
+const LIGHT_CATS=['독자 감상','아이디어·제안'];
 const ERR={
   pw_short:'비밀번호는 4자 이상 입력해 주세요.',
   notice_admin_only:'공지사항은 관리자만 쓸 수 있습니다.',
@@ -469,11 +469,4 @@ document.getElementById('burger').addEventListener('click',()=>document.getEleme
         <a href="index.html" class="brand"><span class="sym-img" style="width:42px;height:42px"></span><span class="nm"><b>명랑사회연구소</b><small style="color:var(--yellow)">MYEONGRANG SOCIAL INSTITUTE</small></span></a>
         <p>근거로 더 밝은 사회를 연구하는 독립 사회과학 연구소. 주식회사 지피에스(GPS) 운영.</p>
       </div>
-      <div class="f-col"><h4>바로가기</h4><a href="index.html#about">연구소 소개</a><a href="board.html">협업·문의</a><a href="together.html">함께하기</a><a href="subscribe.html">구독하기</a></div>
-      <div class="f-col"><h4>연락처</h4><p>대구광역시 수성구 수성동4가 1115-16</p><a href="mailto:justice_park@kakao.com">justice_park@kakao.com</a><p>운영 · 주식회사 지피에스</p></div>
-    </div>
-    <div class="f-bot"><span>© 2026 명랑사회연구소 · Myeongrang Social Institute</span><span class="pp">Operated by GPS Co., Ltd.</span></div>
-  </div>
-</footer>
-</body>
-</html>
+      <div class="f-col"><h4>바로가기</h4><a href="index.html#about">연구소 소개</a><a href="board.html">협업·문의</a><a href="together.html">함께하기</a><a href="subscribe.html">구독하기</a></
