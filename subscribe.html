@@ -36,6 +36,9 @@ nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:
 .navlinks a:hover{color:var(--ink)}.navlinks a:hover::after{width:100%}
 .navcta{background:var(--orange);color:#fff!important;padding:.5rem 1.15rem;border-radius:999px;font-size:.86rem}
 .navcta::after{display:none!important}
+.navghost{border:1.5px solid var(--orange);color:var(--orange)!important;padding:.45rem 1.05rem;border-radius:999px;font-size:.86rem;font-weight:600}
+.navghost::after{display:none!important}
+.navghost:hover{background:var(--orange);color:#fff!important}
 .burger{display:none;background:none;border:0;font-size:1.5rem;cursor:pointer;color:var(--ink)}
 @media(max-width:760px){
   .navlinks{position:fixed;inset:60px 0 auto 0;flex-direction:column;background:var(--bg);padding:1.4rem 2rem;gap:1.1rem;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .35s}
@@ -115,9 +118,9 @@ footer{background:var(--ink);color:#fff;padding:4.5rem 0 2.2rem}
     <ul class="navlinks" id="navlinks">
       <li><a href="index.html#about">소개</a></li>
       <li><a href="index.html#research">연구분야</a></li>
-      <li><a href="board.html">협업·문의</a></li>
       <li><a href="index.html#pubs">연구 현황</a></li>
-      <li><a href="together.html" class="navcta">함께하기</a></li>
+      <li><a href="board.html" class="navghost">협업·문의 게시판</a></li>
+      <li><a href="together.html" class="navcta">함께하기 게시판</a></li>
     </ul>
   </div>
 </nav>
@@ -255,8 +258,4 @@ document.getElementById('burger').addEventListener('click',()=>document.getEleme
       <div class="f-col"><h4>바로가기</h4><a href="index.html#about">연구소 소개</a><a href="board.html">협업·문의</a><a href="together.html">함께하기</a><a href="index.html#pubs">간행물</a></div>
       <div class="f-col"><h4>연락처</h4><p>대구광역시 수성구 수성동4가 1115-16</p><a href="mailto:justice_park@kakao.com">justice_park@kakao.com</a><p>운영 · 주식회사 지피에스</p></div>
     </div>
-    <div class="f-bot"><span>© 2026 명랑사회연구소 · Myeongrang Social Institute</span><span class="pp">Operated by GPS Co., Ltd.</span></div>
-  </div>
-</footer>
-</body>
-</html>
+    <div class="f-bot"><span>© 2026 명랑사회연구소 · Myeongrang Social Institute</span><span class="pp">Operated by GPS
