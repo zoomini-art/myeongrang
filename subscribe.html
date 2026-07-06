@@ -215,7 +215,7 @@ function toast(msg){
   const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
   clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),2800);
 }
-/* 스티비 주소록 자동 등록 (발송용 명단 동기화) */
+/* 스티비 주소록 자동 등록 (발송용 명단 동기화) · v2 이름 포함 */
 function stibeeSync(email,name){
   try{
     const f=document.createElement('form');
