@@ -216,13 +216,15 @@ function toast(msg){
   clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),2800);
 }
 /* 스티비 주소록 자동 등록 (발송용 명단 동기화) */
-function stibeeSync(email){
+function stibeeSync(email,name){
   try{
     const f=document.createElement('form');
-    f.action='https://stibee.com/api/v1.0/lists/iTrfWj0TUule-TvJTobh6cCU_CPLmA==/public/subscribers';
+    f.action='https://stibee.com/api/v1.0/lists/Uzvn-HOgdlAjXIzt_J962TkfF4ikKQ==/public/subscribers';
     f.method='POST';f.target='stb_sink';f.style.display='none';f.acceptCharset='utf-8';
-    const i=document.createElement('input');i.type='hidden';i.name='email';i.value=email;
-    f.appendChild(i);document.body.appendChild(f);f.submit();
+    const add=(k,v)=>{const i=document.createElement('input');i.type='hidden';i.name=k;i.value=v;f.appendChild(i);};
+    add('email',email);
+    if(name)add('name',name);
+    document.body.appendChild(f);f.submit();
     setTimeout(()=>f.remove(),3000);
   }catch(e){/* 동기화 실패해도 구독 신청 자체는 유지 */}
 }
@@ -239,7 +241,7 @@ async function subscribe(){
       toast(res.error==='bad_email'?'이메일 주소를 확인해 주세요.':res.error==='rate_limited'?'잠시 후 다시 시도해 주세요.':'신청에 실패했습니다.');
       return;
     }
-    stibeeSync(email);
+    stibeeSync(email,name);
     document.getElementById('subForm').style.display='none';
     const done=document.getElementById('subDone');done.classList.add('show');
     if(res.already)document.getElementById('doneMsg').innerHTML='이미 구독 중인 이메일입니다.<br>다음 호에서 뵙겠습니다!';
