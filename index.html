@@ -450,5 +450,35 @@ filters.addEventListener('click',e=>{
   e.target.classList.add('active');curF=e.target.dataset.f;applyFilter();
 });
 </script>
+
+<!-- ── VOL.02 발간 알림 팝업 ─────────────────────────────
+     새 호 발행 시: 아래 mrPop 안의 호수·제목·링크·저장키(mr_pop_vol02)만 바꾸면 됩니다.
+     닫으면 7일간 다시 뜨지 않습니다. -->
+<div id="mrPop" style="display:none;position:fixed;right:22px;bottom:22px;z-index:9999;width:min(348px,calc(100vw - 32px));background:#FAF7F1;color:#23211e;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.35);overflow:hidden;font-family:inherit">
+  <div style="height:5px;display:flex"><i style="flex:1;background:#EC5B27"></i><i style="flex:1;background:#1B66F3"></i><i style="flex:1;background:#FFB700"></i><i style="flex:1;background:#49D3C4"></i></div>
+  <button id="mrPopX" aria-label="닫기" style="position:absolute;top:12px;right:10px;border:0;background:none;font-size:20px;line-height:1;color:#8a857c;cursor:pointer;padding:6px">&times;</button>
+  <div style="display:flex;gap:14px;padding:18px 18px 14px;align-items:center">
+    <a href="vol02.html" style="flex:none"><img src="vol02-cover.jpg" alt="7월호 표지" style="width:86px;border-radius:8px;border:1px solid #e2dccf;display:block"></a>
+    <div style="min-width:0">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.14em;color:#EC5B27;margin-bottom:4px">NEW · VOL.02</div>
+      <div style="font-size:16.5px;font-weight:800;line-height:1.35">7월호가 나왔습니다<br>「폭염은 평등하지 않다」</div>
+      <div style="font-size:12.5px;color:#6b6559;margin-top:5px;line-height:1.5">같은 35도, 다른 여름 — 데이터로 읽는 더위 불평등</div>
+    </div>
+  </div>
+  <div style="display:flex;gap:8px;padding:0 18px 16px">
+    <a href="vol02.html" style="flex:1;text-align:center;background:#EC5B27;color:#fff;text-decoration:none;font-weight:700;font-size:13.5px;padding:11px 0;border-radius:999px">지금 읽기 →</a>
+    <button id="mrPopLater" style="flex:none;border:1px solid #d9d2c4;background:none;color:#6b6559;font-size:12.5px;padding:0 14px;border-radius:999px;cursor:pointer">7일간 보지 않기</button>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY='mr_pop_vol02', pop=document.getElementById('mrPop');
+  function snooze(days){ try{ localStorage.setItem(KEY, String(Date.now()+days*864e5)); }catch(e){} pop.style.display='none'; }
+  try{ var until=localStorage.getItem(KEY); if(until && Date.now() < +until) return; }catch(e){}
+  setTimeout(function(){ pop.style.display='block'; }, 1200);
+  document.getElementById('mrPopX').addEventListener('click', function(){ snooze(1); });
+  document.getElementById('mrPopLater').addEventListener('click', function(){ snooze(7); });
+})();
+</script>
 </body>
 </html>
