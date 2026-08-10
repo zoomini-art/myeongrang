@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>월간 명랑사회 VOL.02 웹진 · 폭염은 평등하지 않다</title>
+<meta name="description" content="월간 「명랑사회」 7월호 웹진 — 폭염은 평등하지 않다. 휴대폰에 맞춘 읽기 전용판. 지면 그대로 보려면 PDF, 넘겨 보려면 지면 뷰어.">
+<meta property="og:title" content="월간 명랑사회 VOL.02 웹진 · 7월호">
+<meta property="og:description" content="폭염은 평등하지 않다 — 같은 35도, 다른 여름. 휴대폰으로 편하게 읽는 웹진판">
+<meta property="og:image" content="vol02-cover.jpg">
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: "Noto Sans CJK KR", "Malgun Gothic", sans-serif; color: #1f1f1f; word-break: keep-all; overflow-wrap: break-word; }
+
+  .page { position: relative; width: 210mm; height: 297mm;
+    padding: 15mm 16mm 18mm; background: #FAF7F1; overflow: hidden; page-break-after: always; margin: 0 auto; }
+  .page:last-child { page-break-after: auto; }
+
+  .rh { position: absolute; top: 9mm; left: 16mm; right: 16mm; display: flex; justify-content: space-between; font-size: 8.5pt; }
+  .rh .l b { color: #1f1f1f; font-weight: 700; } .rh .l span { color: #a8a29a; }
+  .rh .r { color: #b0aaa0; letter-spacing: .18em; }
+  .ft { position: absolute; left: 16mm; right: 16mm; bottom: 9mm; display: flex; justify-content: space-between; align-items: center; font-size: 8pt; color: #a8a29a; }
+  .ft .pg { font-weight: 700; color: #555; font-size: 9.5pt; }
+
+  .kicker { color: #EC5B27; font-weight: 700; font-size: 9pt; margin: 7mm 0 3.5mm; display: flex; align-items: center; }
+  .kicker::before { content: ""; width: 20px; height: 3px; background: #EC5B27; display: inline-block; margin-right: 9px; }
+  .kicker.kc-blue { color: #1B66F3; } .kicker.kc-blue::before { background: #1B66F3; }
+  .kicker.kc-teal { color: #1F8F87; } .kicker.kc-teal::before { background: #49D3C4; }
+  .kicker.kc-amber { color: #C98A00; } .kicker.kc-amber::before { background: #FFB700; }
+  h1.title { font-size: 25pt; font-weight: 700; line-height: 1.22; margin: 0 0 5mm; letter-spacing: -.01em; }
+  p.body { font-size: 11pt; line-height: 1.6; text-align: justify; margin: 0 0 3mm; color: #2b2b2b; }
+  h2.sub { font-size: 12.5pt; font-weight: 700; margin: 5mm 0 2.5mm; }
+  .hl { background: #FBDFD0; padding: 0 2px; border-radius: 2px; }
+  .hlb { background: #D8E6F4; padding: 0 2px; border-radius: 2px; }
+  .src { font-size: 9pt; color: #6f695e; margin-top: 2.5mm; }
+
+  .databox { border-left: 4px solid #EC5B27; background: #FAEFE6; padding: 4mm 5mm; border-radius: 0 6px 6px 0; font-size: 9pt; line-height: 1.6; margin: 4mm 0; }
+  .databox h4 { margin: 0 0 2mm; color: #EC5B27; font-size: 10pt; }
+  .databox b { color: #EC5B27; }
+  .quote { background: #262626; color: #fff; border-radius: 10px; padding: 7mm 8mm; font-size: 12.5pt; font-weight: 700; line-height: 1.5; position: relative; margin: 5mm 0; }
+  .quote .o { color: #F77B4A; }
+  .quote::after { content: ""; position: absolute; right: 8mm; bottom: 7mm; width: 22px; height: 3px; background: #EC5B27; }
+
+  .cards { display: flex; gap: 5mm; margin: 6mm 0; }
+  .card { flex: 1; background: #fff; border-radius: 8px; border-top: 4px solid; padding: 5mm 5mm 6mm; }
+  .card .n { font-size: 24pt; font-weight: 700; line-height: 1; }
+  .card .n sub { font-size: 11pt; vertical-align: baseline; }
+  .card .c { font-size: 8.5pt; color: #555; margin-top: 3.5mm; line-height: 1.5; }
+
+  table.t { width: 100%; border-collapse: collapse; font-size: 9pt; margin: 4mm 0 7mm; }
+  table.t th { background: #2E3A48; color: #fff; padding: 2.2mm 3mm; text-align: left; font-weight: 700; }
+  table.t th.r, table.t td.r { text-align: right; }
+  table.t td { padding: 2.1mm 3mm; border-bottom: 1px solid #e6e0d6; }
+  table.t tr:nth-child(even) td { background: #F3EFE8; }
+  .kpi { color: #2E72B8; font-weight: 700; }
+
+  .infoimg { width: 100%; border-radius: 8px; margin: 3mm 0 1mm; display: block; }
+  figure { margin: 0; }
+  figcaption { font-size: 9pt; color: #6f695e; margin: 2mm 0 3mm; }
+  .ph { width: 100%; object-fit: cover; border-radius: 8px; display: block; }
+  .cols2 { display: flex; gap: 5mm; }
+  .cols2 > div { flex: 1; min-width: 0; }
+
+  table.toc-t td { padding: 1.5mm 3mm; } table.toc-t th { padding: 1.7mm 3mm; }
+  table.toc-t { font-size: 8.5pt; margin-bottom: 4mm; }
+  .memo { background: #F1EEE8; border-radius: 8px; padding: 3.5mm 5mm; font-size: 8.5pt; color: #6b6559; line-height: 1.55; margin: 4mm 0; }
+  .memo b { color: #EC5B27; }
+
+  /* NEXT/판권 — VOL.01 마지막 장 문법 */
+  .nx-card { display: flex; gap: 5mm; background: #F1EEE8; border-left: 4px solid #EC5B27; border-radius: 0 8px 8px 0; padding: 5mm 5mm 5mm 6mm; margin: 6mm 0; align-items: stretch; }
+  .nx-card .tx { flex: 1.4; }
+  .nx-card .k { color: #EC5B27; font-weight: 700; font-size: 8.5pt; letter-spacing: .04em; margin-bottom: 2mm; }
+  .nx-card h3 { font-size: 15pt; font-weight: 700; margin: 0 0 2.5mm; }
+  .nx-card p { font-size: 9.5pt; color: #5B5344; line-height: 1.6; margin: 0; }
+  .nx-card img { flex: 1; min-width: 0; width: 48mm; height: 52mm; object-fit: cover; border-radius: 6px; }
+  .nx-slogan { font-size: 13.5pt; font-weight: 700; line-height: 1.55; margin: 9mm 0; }
+  .nx-slogan .o { color: #EC5B27; }
+  .colo { border-top: 1px solid #ddd6c8; padding-top: 4mm; position: absolute; left: 16mm; right: 16mm; bottom: 16mm; font-size: 8pt; color: #8a857c; line-height: 1.7; }
+  .colo b { color: #2b2b2b; font-size: 9.5pt; }
+  .colo .sym { position: absolute; right: 0; bottom: 0; width: 14mm; }
+
+  /* 집밥연구소 recipe cards */
+  .recipe { background: #fff; border: 2.5px solid #F2D14B; border-radius: 10px; padding: 4mm 5mm 4.5mm; margin: 4mm 0; }
+  .rc-head { font-size: 14pt; font-weight: 700; color: #3E6B25; margin-bottom: 2mm; }
+  .rc-no { display: inline-block; color: #5C8A3C; margin-right: 1mm; }
+  .rc-ing { font-size: 9.8pt; color: #6b6559; line-height: 1.55; background: #F0F5E8; border-radius: 6px; padding: 2.5mm 3.5mm; margin: 0 0 2.5mm; }
+  .rc-ing b { color: #5C8A3C; }
+  .rc-steps { margin: 0; padding-left: 5.5mm; font-size: 10.5pt; line-height: 1.65; color: #2b2b2b; }
+  .rc-steps li { margin-bottom: 1.2mm; }
+  .rc-steps b { color: #C23A10; }
+  .polpair { display: flex; gap: 4mm; justify-content: center; align-items: flex-start; }
+  .polpair.one .pol { width: 46mm; }
+  .pol { background: #fff; padding: 2mm 2mm 5mm; box-shadow: 0 1.2mm 3.5mm rgba(90,60,20,.22); width: 34mm; }
+  .pol img { width: 100%; height: 30mm; object-fit: cover; display: block; }
+  .polpair.one .pol img { height: 38mm; }
+  .pol .cap { font-family: "Nanum Pen", "Noto Sans CJK KR"; font-size: 11pt; color: #4A3A20; text-align: center; margin-top: 2mm; }
+  .pol.r1 { transform: rotate(-2.2deg); }
+  .pol.r2 { transform: rotate(1.6deg); margin-top: 2.5mm; }
+  .pol.r3 { transform: rotate(-1.2deg); }
+
+  /* cover — Collect style: tone-on-tone, hero object, teasers, callout, stamp */
+  @font-face { font-family: "Nanum Pen"; src: url("vol02w/nanum-pen-kr.woff2") format("woff2"); }
+  @font-face { font-family: "Nanum Pen"; src: url("vol02w/nanum-pen-la.woff2") format("woff2"); unicode-range: U+0000-00FF; }
+  .cv { background: #F2E9D6; color: #4A2E14; padding: 12mm 18mm 14mm; }
+  .cv .logo { text-align: center; margin-top: 2mm; }
+  .cv .logo .wolgan { font-size: 12pt; letter-spacing: .55em; color: #C23A10; font-weight: 700; }
+  .cv .logo .script { font-family: "Nanum Pen", "Noto Sans CJK KR"; font-size: 78pt; line-height: 1.02; color: #E4551F; margin-top: 1mm;
+    text-shadow: 0 1.2mm 0 rgba(120,70,20,.14); }
+  .cv .issuebar { display: flex; align-items: stretch; border-top: 2.5px solid #4A2E14; border-bottom: 2.5px solid #4A2E14; margin-top: 4mm; }
+  .cv .issuebar .bc { flex: 1.05; display: flex; align-items: center; gap: 3mm; padding: 2.5mm 0; border-right: 2px solid #4A2E14; }
+  .cv .issno { flex: 0 0 30mm; display: flex; align-items: center; justify-content: center; gap: 2.5mm; border-right: 2px solid #4A2E14; }
+  .cv .issno .lbl { font-size: 8pt; letter-spacing: .3em; color: #4A2E14; font-weight: 700; }
+  .cv .issno .circ { display: inline-block; width: 7.5mm; height: 7.5mm; border: 1.6px solid #4A2E14; border-radius: 50%;
+    text-align: center; line-height: 7.2mm; font-size: 11pt; font-weight: 700; color: #4A2E14; }
+  .cv .barcode { width: 34mm; height: 9mm;
+    background: repeating-linear-gradient(90deg, #4A2E14 0 1px, transparent 1px 3px, #4A2E14 3px 5px, transparent 5px 6px, #4A2E14 6px 7px, transparent 7px 10px); }
+  .cv .issuebar .bcn { font-size: 7pt; letter-spacing: .18em; color: #4A2E14; }
+  .cv .issuebar .meta { flex: 1; padding: 2.5mm 0 2.5mm 5mm; }
+  .cv .issuebar .tagline { font-size: 9pt; font-style: italic; font-weight: 700; color: #4A2E14; border-bottom: 1.5px solid #4A2E14; padding-bottom: 1.2mm; margin-bottom: 1.2mm; }
+  .cv .issuebar .no { font-size: 22pt; font-weight: 700; color: #4A2E14; line-height: 1.02; }
+  .cv .teasers { display: flex; gap: 6mm; padding: 4mm 0 0; }
+  .cv .teasers.t2 { padding-top: 3mm; }
+  .cv .teasers .tz { flex: 1; font-size: 8.3pt; line-height: 1.5; color: #5B3A18; }
+  .cv .teasers .tz b { display: inline; color: #3A2208; }
+  .cv .teasers .tz i { font-style: italic; }
+  .cv .teasers .tz .pg { color: #3A2208; font-weight: 700; }
+  .cv .hero { position: absolute; left: 0; right: 0; top: 118mm; text-align: center; }
+  .cv .hero svg { display: inline-block; }
+  .cv .callout { position: absolute; right: 18mm; top: 168mm; width: 49mm; font-size: 9.3pt; line-height: 1.55; color: #4A2E14; text-align: left; }
+  .cv .callout b { font-size: 10.5pt; }
+  .cv .callout .cl-line { position: absolute; left: -26mm; top: 3mm; width: 24mm; height: 1px; background: #4A2E14; }
+  .cv .callout .cl-dot { position: absolute; left: -27.5mm; top: 2.4mm; width: 1.6mm; height: 1.6mm; border-radius: 50%; background: #4A2E14; }
+  .cv .callout b { color: #3A2208; }
+  .cv .callout i { font-style: italic; }
+  .cv .stamp { position: absolute; right: 18mm; bottom: 12mm; }
+  .cv .miniidx { position: absolute; left: 18mm; bottom: 13mm; font-size: 7.5pt; color: #7A4D1F; letter-spacing: .12em; }
+
+  /* ══ 표2·표3 (표지 안쪽 면 — 인쇄 4의 배수 대응, 페이지 번호 없음) ══ */
+  .cvx { background: #F2E9D6; color: #4A2E14; padding: 24mm 24mm 20mm; }
+  .cvx .toplbl { font-size: 8pt; letter-spacing: .3em; color: #A0724A; font-weight: 700; text-align: center; }
+  .cvx .rulebar { border-top: 2.5px solid #4A2E14; margin: 5mm 0; }
+  .cvx .rulebar.thin { border-top-width: 1px; border-color: #C9B490; }
+  .cvx h2.cvx-h { font-size: 19pt; font-weight: 700; color: #3A2208; margin: 0 0 4mm; line-height: 1.3; letter-spacing: -.01em; }
+  .cvx h2.cvx-h .o { color: #E4551F; }
+  .cvx .script-s { font-family: "Nanum Pen", "Noto Sans CJK KR"; font-size: 34pt; color: #E4551F; line-height: 1.05; }
+  .cvx p.cvx-p { font-size: 10pt; line-height: 1.75; color: #5B3A18; text-align: justify; margin: 0 0 3mm; }
+  .cvx table.mast { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
+  .cvx table.mast td { padding: 2.4mm 0; border-bottom: 1px solid #D8C6A4; vertical-align: top; color: #4A2E14; }
+  .cvx table.mast td.k { width: 34mm; font-size: 8pt; letter-spacing: .18em; color: #A0724A; font-weight: 700; padding-top: 2.9mm; }
+  .cvx table.mast td b { color: #3A2208; }
+  .cvx .cvx-foot { position: absolute; left: 24mm; right: 24mm; bottom: 14mm; font-size: 7.5pt; color: #A0724A; letter-spacing: .12em; display: flex; justify-content: space-between; align-items: center; }
+  /* ══════════ 화면(모바일) 대응 — 인쇄·PDF에는 영향 없음 ══════════
+     print 미디어(WeasyPrint·브라우저 인쇄)는 위의 mm/pt 지면 레이아웃을 그대로 쓰고,
+     화면이 좁을 때만 아래 규칙이 지면을 '세로 스크롤 웹뷰'로 풀어준다.
+     글자 크기는 clamp()로 화면 폭에 따라 유동 — 폰에서 최소 16px 본문 보장. */
+  @media screen and (max-width: 900px) {
+    body { background: #E9E4DA; }
+    .page { width: 100%; height: auto; min-height: 0; padding: 6vw 5vw 14vw; margin: 0 0 12px; overflow: visible; }
+    .rh, .ft { position: static; margin: 0 0 4vw; }
+    .ft { margin: 8vw 0 0; border-top: 1px solid #e0d9cc; padding-top: 2vw; }
+
+    p.body, .databox, .memo { font-size: clamp(18px, 4.8vw, 22px); line-height: 1.8; }
+    h1.title { font-size: clamp(30px, 8.5vw, 42px); }
+    h2.sub { font-size: clamp(20px, 5.6vw, 27px); }
+    .kicker { font-size: clamp(15px, 4vw, 17px); }
+    .src, figcaption { font-size: clamp(15px, 4vw, 18px); }
+    .quote { font-size: clamp(19px, 5.4vw, 25px); padding: 5vw 6vw; }
+    table.t { font-size: clamp(14px, 4vw, 18px); }
+    table.t th, table.t td { padding: 1.4vw 2.5vw; }
+    table.t { margin-bottom: 6vw; }
+    .rc-head { font-size: clamp(20px, 5.6vw, 26px); }
+    .rc-ing { font-size: clamp(15px, 4.2vw, 18px); }
+    .rc-steps { font-size: clamp(17px, 4.6vw, 20px); padding-left: 6vw; }
+
+    .cards, .cols2, .cv .teasers { flex-direction: column; }
+    .card .n { font-size: clamp(26px, 8vw, 34px); }
+    .card .c { font-size: clamp(13px, 3.6vw, 15px); }
+    .ph, .infoimg { height: auto !important; max-height: none !important; }
+
+    .cv .logo .script { font-size: clamp(64px, 19vw, 96px); }
+    .cv .teasers .tz { font-size: clamp(15px, 4.2vw, 18px); margin-bottom: 3vw; }
+    .cv .hero, .cv .callout, .cv .stamp, .cv .miniidx { position: static; width: auto; margin-top: 6vw; text-align: center; }
+    .cv .callout { text-align: left; font-size: clamp(15px, 4.2vw, 18px); }
+    .cv .callout .cl-line, .cv .callout .cl-dot { display: none; }
+  }
+  /* 태블릿(901px~1100px): 지면 비율 유지하되 화면 폭에 맞춰 축소 */
+  @media screen and (min-width: 901px) and (max-width: 1100px) {
+    .page { transform: scale(calc(100vw / 820)); transform-origin: top center; }
+  }
+</style>
+
+<style id="webzine-overrides">
+/* ═══ 웹진(모바일 웹) 오버라이드 — 지면 CSS 위에 얹는 층 ═══ */
+html { scroll-behavior:smooth; }
+body { background:#EAE4D8; }
+.wz-top { position:sticky; top:0; z-index:50; background:#C23A10; color:#FFF3E6;
+  padding:10px 16px; font-size:14px; font-weight:700; letter-spacing:.06em;
+  display:flex; justify-content:space-between; align-items:center; }
+.wz-top .r { font-weight:400; font-size:12px; opacity:.85; }
+.wz-cover { max-width:760px; margin:16px auto 0; padding:0 8px; }
+.wz-cover img { width:100%; border-radius:14px; box-shadow:0 2px 10px rgba(0,0,0,.12); display:block; }
+.page { width:auto; height:auto; min-height:0; overflow:visible;
+  padding:26px 20px 30px; margin:14px auto; max-width:760px;
+  border-radius:14px; box-shadow:0 1px 6px rgba(0,0,0,.07); page-break-after:auto; }
+.rh, .ft { display:none; }
+p.body { font-size:17px; line-height:1.78; margin:0 0 14px; }
+h1.title { font-size:27px; line-height:1.3; margin-bottom:16px; }
+h2.sub { font-size:20px; margin:20px 0 10px; }
+.kicker { font-size:13px; margin:4px 0 14px; }
+figcaption { font-size:13px; margin:6px 0 12px; }
+.src { font-size:13px; margin-top:10px; }
+.databox { font-size:14px; line-height:1.65; padding:14px 16px; margin:16px 0; }
+.databox h4 { font-size:15px; }
+.memo { font-size:13.5px; line-height:1.6; padding:12px 16px; margin:14px 0; }
+.quote { font-size:17.5px; line-height:1.6; padding:18px 22px 22px; margin:18px 0; }
+table.t { font-size:14px; margin:14px 0 20px; } table.t th, table.t td { padding:8px 10px; }
+table.toc-t { font-size:13px; }
+.card { padding:14px 14px 16px; } .card .n { font-size:26px; } .card .n sub { font-size:13px; } .card .c { font-size:13px; margin-top:8px; }
+.recipe { padding:14px 16px 16px; margin:14px 0; }
+.rc-head { font-size:19px; } .rc-ing { font-size:14px; padding:10px 12px; } .rc-steps { font-size:15.5px; line-height:1.7; }
+img, svg { max-width:100%; }
+.infoimg { margin:10px 0 4px; }
+.colo { position:static; margin-top:24px; font-size:12.5px; }
+.colo .sym { position:static; float:right; width:44px; margin-left:10px; }
+.cvx .cvx-foot { position:static; margin-top:26px; }
+table.mast { font-size:14px; }
+.nx-card h3 { font-size:19px; } .nx-card p { font-size:14px; } .nx-card .k { font-size:12px; }
+.nx-slogan { font-size:19px; margin:26px 0; }
+@media (max-width:640px) {
+  .page { padding:22px 16px 26px; margin:10px 8px; }
+  .cols2 { flex-direction:column; }
+  .cols2 > div, .cols2 > figure { flex:1 1 auto !important; }
+  .cards { flex-wrap:wrap; } .card { flex:1 1 46%; min-width:140px; }
+  .polpair { flex-wrap:wrap; }
+  h1.title { font-size:24px; }
+  .nx-card { flex-direction:column; } .nx-card img { width:100%; height:auto; }
+}
+</style>
+</head>
+<body>
+<div class="rule" style="height:5px;display:flex"><i style="flex:1;background:#EC5B27"></i><i style="flex:1;background:#1B66F3"></i><i style="flex:1;background:#FFB700"></i><i style="flex:1;background:#49D3C4"></i></div>
+<div class="wz-top"><span>월간 명랑사회 · VOL.02 웹진</span><span style="display:flex;gap:8px;">
+<a href="vol02.html" style="color:#FFF3E6;background:rgba(255,255,255,.18);padding:5px 12px;border-radius:999px;font-size:12px;text-decoration:none;font-weight:700;">지면 보기</a>
+<a href="myeongrang-vol02.pdf" style="color:#C23A10;background:#FFF3E6;padding:5px 12px;border-radius:999px;font-size:12px;text-decoration:none;font-weight:700;">PDF</a></span></div>
+<div class="wz-cover"><img src="vol02w/cover.jpg" alt="월간 명랑사회 VOL.02 표지"></div>
+
+<!-- ═══════════ 표2 (앞표지 안쪽) — 판권면 ═══════════ -->
+<div class="page cvx">
+  <div class="toplbl">MASTHEAD · 판권</div>
+  <div class="rulebar"></div>
+  <div style="text-align:center; margin: 12mm 0 9mm;">
+    <div class="script-s">명랑사회</div>
+    <div style="font-size:9pt; letter-spacing:.4em; color:#4A2E14; font-weight:700; margin-top:2mm;">월간 · VOL.02 · 2026년 7월</div>
+  </div>
+  <p class="cvx-p" style="text-align:center; max-width:120mm; margin:0 auto 10mm;">「월간 명랑사회」는 명랑사회연구소가 매달 펴내는 잡지입니다.<br>사람의 마음을 탓하기 전에, 그 마음이 놓인 조건을 데이터로 들여다봅니다.<br>사회를 명랑하게, 근거로 말합니다.</p>
+  <table class="mast">
+    <tr><td class="k">제호</td><td><b>월간 명랑사회</b> — 통권 제2호 (VOL.02 · 2026년 7월)</td></tr>
+    <tr><td class="k">창간</td><td>2026년 6월 — 창간호 「청년은 정말 결혼을 포기했을까」</td></tr>
+    <tr><td class="k">발행</td><td>명랑사회연구소</td></tr>
+    <tr><td class="k">발행인 · 편집장</td><td><b>박지민</b></td></tr>
+    <tr><td class="k">함께 만든 사람들</td><td>데이지 진 (집밥연구소 · 글·요리·사진) · 부리 도니꼬 (부리의 명랑음악당 · 글) · 아르백 (명랑 뷰티 · 글·사진)</td></tr>
+    <tr><td class="k">웹 · 문의</td><td>www.myeongrang.org · justice_park@kakao.com</td></tr>
+    <tr><td class="k">저작권</td><td>© 2026 명랑사회연구소. 본지에 실린 글·사진·데이터 분석의 무단 전재와 재배포를 금하며, 인용 시 출처를 밝혀 주십시오. 본지의 분석과 해석에 대한 책임은 연구소에 있습니다.</td></tr>
+  </table>
+  <div class="cvx-foot"><span>MYEONGRANG SOCIETY MONTHLY</span><img src="vol02w/symbol.png" style="width:12mm;"></div>
+</div>
+
+<!-- ═══════════ p.2 편집장 왈 ═══════════ -->
+<div class="page">
+  <div class="rh"><div class="l"><b>신설 코너</b> <span>편집장 왈 ①</span></div><div class="r">NEW · EDITOR'S NOTE</div></div>
+  <div class="kicker">NEW · 편집장 왈 — 2026년 7월</div>
+<h1 class="title">가늘고 길게, 그러나 명랑하게<br><span style="font-size:14pt; color:#6b6559">세기를 넘어 다시 만난 친구들에게 건넨 말, 중용中庸</span></h1>
+  <p class="body">7월은 월간 명랑사회 콘텐츠 보강을 위해 여러 사람과 소통할 일이 많았다. 필자는 전형적인 INTP에 성인 ADHD를 두루 겸비한 사회성 결여의 성향이 기본 탑재된 정체성이라 한번씩 불쑥 이렇게 지인들에게 아무 거리낌없이 연락을 넣곤 한다. 예컨대 20세기가 마지막이었던 대학동기 연락처를 어쩌다 알게 되어 바로 전화를 하고 마치 어제 만났던 이 마냥 떠들어 댈 수 있으니 말이다.</p>
+  <p class="body">그렇게 세기를 넘어 다시 열린 대화에서 우리는 모두 오십을 넘겼고, 친구들의 삶에 대한 이야기를 들으며 내가 그들에게 전하는 말은 한 가지로 수렴하고 있었다. 그것은 바로 <span class="hl">'중용中庸'</span>이었다.</p>
+  <div class="quote">너무 최선을 다해 열심히 살지 마라.<br>세상은 니 노력만큼 재깍재깍 돌려 주지 않으니<br><span class="o">세상에 대한 상처만 자꾸 쌓인다.</span></div>
+  <p class="body">물론 그렇다고 아무렇게나 살라는 이야기는 아니다. 주어진 역량 안에서 자신이 망가지지 않을 정도의 용량을 찾는 과정부터가 쉬운 일은 아니지 않은가? 이 말은 결국 자기 자신의 객관화에 방점이 찍히는 것이다. 즉슨, 할 수 있는 일과 할 수 없는 일을 분별하고 할 수 있는 일을 하되 할 수 없는 일은 스스로도 그렇게 인정할 수 있어야 한다는 것이다. 말이 좀 어려운가? 쉽게 말하자면 할 수 있는 일은 상대적으로 쉽게 느껴지고 할 수 없는 일은 어렵게 느껴지기 때문에, 내가 할 수 있는 일은 100%로 쥐어 짜내지 않아도 세상의 기준을 충족시키기 쉽고 그렇지 않은 일은 자기 자신을 갈아 넣어도 항상 기준 미달의 결과를 갖고 온다고 얘기하면 좀 쉬울까?</p>
+  <p class="body">그럼에도 해야 하는 일이라고 한다면, 뭐 어쩌겠어. 해야지! 이때는 그냥 납작 엎드려 할 수밖에. 자존심 세우며 현실에 들이 받지 말고 그냥 적당히 비위 맞춰주면서 해야지 어쩌겠어? 그러다 보면 뜻밖에 동병상련을 겪는 좋고 훌륭한 사람들을 얻게 되기도 하니까.</p>
+  <p class="body">어차피 세상 다 돌고 도는 거, 넘치지도 모자라지도 않게 가늘고 길게 사는 게 정답인데 따지고 보면 이런 적절한 선택을 지속적으로 한다는 거, 그거 쉽지 않은 일이다. 그래서 오늘도 나는 아주 얄팍하고 명랑하게 살기 위해 나를 다그치지 않고 아주 작은 실천에도 나를 칭찬하고 격려하는 중. 이렇게라도 자기 자신과 친해져 보시라. <span class="hl">나 자신을 발견하는 기쁨은 신대륙을 발견하는 것보다 더 기쁠 수도 있을 테니까.</span> <span class="src">— 편집장 (덧. 앞의 INTP 자가진단은 무면허 진단이 아니다 — 편집장은 MBTI분석전문가 1급이다.)</span></p>
+    <div class="ft"><div class="who">명랑사회연구소</div><div class="pg">01</div></div>
+</div>
+
+<!-- ═══════════ p.3 발간사 + 목차 ═══════════ -->
+<div class="page">
+  <div class="rh"><div class="l"><b>월간 명랑사회</b> <span>VOL.02 · 2026.07</span></div><div class="r">FOREWORD</div></div>
+  <div class="kicker">발간사 · 발행인의 말</div>
+  <h1 class="title">두 번째 명랑</h1>
+  <p class="body">창간호를 읽어 주신 분들께 감사드린다. "청년은 정말 결혼을 포기했을까"라는 질문으로 시작한 창간호에서 우리는 하나의 문법을 연습했다. 사람의 '마음'을 탓하기 전에, 그 마음이 놓인 <span class="hl">'조건'을 데이터로 들여다보는 것</span>.</p>
+  <p class="body">두 번째 호는 그 문법을 여름 한복판으로 가져온다. 폭염은 흔히 날씨의 문제로, 개인의 대처로 이야기된다. 그러나 죽음의 명단은 무작위가 아니다. 나이와 일과 집과 지역을 따라, 더위의 치명성은 정확하게 쏠린다. 이번 호는 그 쏠림을 끝까지 따라간 기록이다.</p>
+  <p class="body">아울러 이번 호부터 일곱 개의 코너가 새로 문을 연다. 잡지의 문을 여는 「편집장 왈」, 무릎부터 돌보는 「명랑 건강」, 악보 속 암호를 읽는 「부리의 명랑음악당」, 물건을 호기심으로 들여다보는 「맥시멀리스트의 방」, 전시를 담는 그릇을 읽는 「일본 미술관 건축 산책」, 연구원 데이지 진 님이 밥상의 연구를 맡은 「집밥연구소」, 그리고 여름의 피부를 지키는 「명랑 뷰티」. 무거운 특집 옆에 명랑한 산책로를 두었다. 같은 35도 아래에서, 부디 서늘하고 명랑하게 읽어 주시기를. <span class="src">— 발행인 박지민</span></p>
+
+  <h2 class="sub">이번 호</h2>
+  <table class="t toc-t">
+    <tr><th style="width:9mm">#</th><th style="width:34mm">코너</th><th>제목</th></tr>
+    <tr><td>01</td><td><b>NEW</b> 편집장 왈 ①</td><td>가늘고 길게, 그러나 명랑하게 — 오십의 중용</td></tr>
+    <tr><td>03</td><td>여는 글</td><td>올여름은 왜 더 위험한가</td></tr>
+    <tr><td>04</td><td>데이터 읽기</td><td>누가 죽는가 — 폭염의 세 얼굴</td></tr>
+    <tr><td>05</td><td>연구소의 시선 ①</td><td>보유는 평등하고, 사용은 불평등하다 (+박스 06)</td></tr>
+    <tr><td>07</td><td>연구소의 시선 ②</td><td>폭염의 지도 — 위험의 공간 불평등</td></tr>
+    <tr><td>08</td><td>인포그래픽</td><td>한 장으로 보는 폭염 불평등</td></tr>
+    <tr><td>09</td><td>현장·제도</td><td>에너지바우처는 그 문 앞에서 멈춘다</td></tr>
+    <tr><td>10</td><td>칼럼</td><td>서늘함은 언제 사유재가 되었나</td></tr>
+    <tr><td>11</td><td>맺는 글</td><td>위험이 가장 큰 곳에 제도가 닿으려면</td></tr>
+    <tr><td>12</td><td>용어풀이</td><td>이번 호의 키워드</td></tr>
+    <tr><td>13</td><td><b>NEW</b> 명랑 건강 ①</td><td>계단은 내려올 때 아프다 — 무릎이 수상해진 중년을 위한 내려가기의 기술</td></tr>
+    <tr><td>16</td><td>연재 · 명랑한 미술관 ②</td><td>거장을 보는 또 하나의 눈 — 피카소 meets 폴 스미스</td></tr>
+    <tr><td>17</td><td><b>NEW</b> 건축 산책 ①</td><td>파도 뒤의 원뿔 — 국립신미술관</td></tr>
+    <tr><td>18</td><td><b>NEW</b> 부리의 명랑음악당 ①</td><td>음표에 숨긴 이름들 · 첫 회 — 바흐의 서명과 400곡의 헌정</td></tr>
+    <tr><td>20</td><td><b>NEW</b> 맥시멀리스트의 방 ①</td><td>안경이 통역을 시작했다 — 레이밴 메타</td></tr>
+    <tr><td>22</td><td><b>NEW</b> 집밥연구소 ①</td><td>with 가지 — 여름 가지 레시피 네 접시</td></tr>
+    <tr><td>24</td><td><b>NEW</b> 명랑 뷰티 ①</td><td>무너지지 않는 여름 — 화장을 지키는 1 : 3의 비율</td></tr>
+    <tr><td>—</td><td>NEXT</td><td>다음 호 예고 · 판권</td></tr>
+  </table>
+  <div class="ft"><div class="who">명랑사회연구소 · 사회를 명랑하게, 근거로 말합니다</div><div class="pg">02</div></div>
+</div>
+
+<!-- ═══════════ p.3 PROLOGUE ═══════════ -->
+<div class="page">
+  <div class="rh"><div class="l"><b>특집</b> <span>같은 35도, 다른 여름</span></div><div class="r">PROLOGUE</div></div>
+  <div class="kicker">여는 글</div>
+  <h1 class="title">올여름은 왜 더 위험한가</h1>
+  <p class="body">이 잡지가 나오는 7월 하순은 1년 중 가장 위험한 시기다. 지난해(2025년) 온열질환자의 <b>29.0%(1,295명)</b>, 사망자의 <b>34.5%</b>가 7월 하순에 집중됐다. 발행월이 곧 위험의 정점이다.</p>
+  <p class="body">추세도 심상치 않다. 2025년 온열질환으로 응급실을 찾은 사람은 <span class="hl"><b>4,460명</b> — 전년보다 20.4% 늘어 2018년 이후 최다</span>였다. 추정 사망자는 29명.</p>
+  <p class="body">한 가지를 미리 밝혀 둔다. 이 숫자는 응급실감시체계에 '신고된' 사례만 센 것으로, 여름 더위가 데려가는 죽음의 <b>하한선</b>이다. 폭염 기간의 초과사망(평년 대비 늘어난 사망)을 세면 규모는 훨씬 커진다는 것이 국내외 연구의 일치된 결론이다. 우리가 보는 것은 빙산의 꼭대기다.</p>
+  <div class="quote">그러니 질문을 바꾸자.<br>'올여름은 얼마나 더운가'가 아니라 —<br><span class="o">'같은 더위 아래에서, 누가 위험한가.'</span></div>
+  <p class="src">출처: 질병관리청 「2025년 온열질환 응급실감시체계 운영 결과」(2025.10)</p>
+  <div class="ft"><div class="who">명랑사회연구소</div><div class="pg">03</div></div>
+</div>
+
+<!-- ═══════════ p.4 DATA ═══════════ -->
+<div class="page">
+  <div class="rh"><div class="l"><b>특집</b> <span>같은 35도, 다른 여름</span></div><div class="r">DATA</div></div>
+  <div class="kicker">데이터 읽기 · 리포트 ①</div>
+  <h1 class="title">누가 죽는가 — 폭염의 세 얼굴</h1>
+  <div class="cards">
+    <div class="card" style="border-color:#EC5B27"><div class="n" style="color:#EC5B27">62.1<sub>%</sub></div><div class="c"><b>나이</b> — 사망자 29명 중 18명이 60세 이상. 치명성은 노인에게 쏠린다.</div></div>
+    <div class="card" style="border-color:#2E72B8"><div class="n" style="color:#2E72B8">26.0<sub>%</sub></div><div class="c"><b>일</b> — 환자 최다 직업은 단순노무(1,160명). 실외 발생이 79.2%, 실내의 3.8배.</div></div>
+    <div class="card" style="border-color:#7BA05B"><div class="n" style="color:#7BA05B">5.2<sub>배</sub></div><div class="c"><b>지역</b> — 10만 명당 신고환자 전남 21.4명 vs 서울 4.1명. 농촌·고령 지역 응집.</div></div>
+  </div>
+  <figure><img class="infoimg" src="vol02w/info1.png" alt="인포1"><figcaption>인포그래픽 ① 폭염의 세 얼굴 — 나이·일·지역</figcaption></figure>
+  <p class="body">더위는 이 세 자리에 정확히 내려앉는다. 우연이 아니다. 나이와 일과 집과 소득이 만든 구조를 따라, 더위의 치명성은 분포한다.</p>
+  <p class="src">출처: 질병관리청(2025). 직업·발생장소 비율은 환자 전체 기준(사망자 기준과 다름).</p>
+  <div class="ft"><div class="who">명랑사회연구소</div><div class="pg">04</div></div>
+</div>
+
+<!-- ═══════════ p.5 ANALYSIS 1 ═══════════ -->
+<div class="page">
+  <div class="rh"><div class="l"><b>특집</b> <span>같은 35도, 다른 여름</span></div><div class="r">ANALYSIS ①</div></div>
+  <div class="kicker">연구소의 시선 ① · HEPS 6,311가구 자체 분석</div>
+  <h1 class="title">보유는 평등하고,<br>사용은 불평등하다</h1>
+  <p class="body">"가난한 집에는 에어컨이 없다"는 통념부터 걷어내자. 월소득 200만 원 미만 가구의 에어컨 보유율은 <b>88.3%</b> — 600만 원 이상 가구(94.6%)와의 격차는 보유대수 기준 <span class="hlb">1.27배</span>에 그친다. 진짜 격차는 스위치에 있다. 연간 사용량은 292kWh 대 629kWh, <span class="hl"><b>2.15배</b></span>. 에어컨을 가진 가구만 비교해도 격차는 2배다. 가난한 집에도 에어컨은 있었다. 다만 켜지 못했을 뿐이다.</p>
+  <figure><img class="infoimg" src="vol02w/info3.png" alt="인포3"><figcaption>인포그래픽 ② 보유는 평등에 가깝고, 사용은 불평등하다</figcaption></figure>
+  <p class="body">이 사용의 격차를 죽음의 격차 위에 포개면 서늘한 정렬이 나타난다. 에어컨을 가장 덜 켜는 60세 이상(연 366kWh, 40대의 58%)이 사망자의 62.1%를 차지한다. 노인 1인가구는 연 272kWh — 다른 가구의 절반. 33㎡ 미만 주택은 132㎡ 이상의 절반 남짓(1.9배 격차)을 켠다.</p>
+  <p class="body">미리 답해 둘 것이 있다. 이 정렬은 인과의 증명이 아니라 <b>구조의 증거</b>다 — 같은 자리에 나이·소득·주거·고립이라는 취약성이 겹겹이 쌓여 있다는. 그리고 이 표본조차 닿지 못하는 주거(쪽방·고시원)가 있으므로, 여기 적은 격차는 최소치다.</p>
+  <p class="src">출처: 에너지경제연구원 가구에너지패널조사(HEPS) 13차(2022년 기준) 마이크로데이터, 연구소 자체 분석(가구가중치 적용). 연간 사용량은 정격소비전력 기반 추정치로, 절대값보다 집단 간 격차로 읽는 것이 정확하다. 에너지총조사(2020)에서도 같은 격차가 확인된다.</p>
+  <div class="ft"><div class="who">명랑사회연구소</div><div class="pg">05</div></div>
+</div>
+
+<!-- ═══════════ p.6 ANALYSIS 1b 이중전가 ═══════════ -->
+<div class="page">
+  <div class="rh"><div class="l"><b>특집</b> <span>같은 35도, 다른 여름</span></div><div class="r">ANALYSIS ① BOX</div></div>
+  <div class="kicker">박스 · 이 특집의 심장</div>
+  <h1 class="title">에어컨은 열을 없애지 않는다,<br>옮길 뿐이다</h1>
+  <p class="body">에어컨은 실내의 열을 실외로 토해내는 기계다. 그 열은 두 갈래로 청구된다. <b>실외기의 폐열</b>은 골목을 데우고(외기 35℃일 때 토출 공기 약 60℃ — 현장 보도 기준), 냉방 전기를 만드는 <b>발전소</b>는 멀리서 열과 탄소를 배출한다(2023년 전력배출계수 0.417kgCO₂/kWh).</p>
+  <figure><img class="infoimg" src="vol02w/info2.png" alt="인포2"><figcaption>인포그래픽 ③ 이중 전가 — 골목의 실외기, 저곳의 발전소</figcaption></figure>
+  <div class="databox"><h4>Salamanca et al. (2014), JGR: Atmospheres</h4>
+  애리조나주립대 연구진의 피닉스 시뮬레이션 — 에어컨 폐열은 낮에는 지표 부근에 거의 흔적을 남기지 않지만, <b>밤에는 일부 도심의 기온을 1℃ 이상</b> 끌어올렸다. 더워진 밤은 다시 에어컨을 부른다(양의 되먹임). 켜는 사람과 떠안는 사람이 다르다는 것 — 그것이 이 특집이 '수탈'이라는 단어를 꺼내는 이유다.</div>
+  <p class="body">한여름 열대야의 1도는 가볍지 않다. 그 1도가 누군가에게는 잠들 수 있는 밤과 잠들 수 없는 밤을 가른다.</p>
+  <div class="ft"><div class="who">명랑사회연구소</div><div class="pg">06</div></div>
+</div>
+
+<!-- ═══════════ p.7 ANALYSIS 2 ═══════════ -->
+<div class="page">
+  <div class="rh"><div class="l"><b>특집</b> <span>같은 35도, 다른 여름</span></div><div class="r">ANALYSIS ②</div></div>
+  <div class="kicker">연구소의 시선 ② · 공간 불평등</div>
+  <h1 class="title">폭염의 지도 — 위험의 지도와<br>냉방의 지도가 어긋난다</h1>
+  <table class="t">
+    <tr><th>시도</th><th class="r">10만 명당 신고환자</th><th class="r">에어컨 연 사용량(kWh)</th><th class="r">60세 이상 가구</th></tr>
+    <tr><td><b>전남</b></td><td class="r"><b>21.4명</b> (최고)</td><td class="r"><b>301.0</b> (하위권)</td><td class="r">62.1%</td></tr>
+    <tr><td>울산</td><td class="r">16.9명</td><td class="r">328.7</td><td class="r">51.4%</td></tr>
+    <tr><td>경북</td><td class="r">16.9명</td><td class="r">335.2</td><td class="r">71.7%</td></tr>
+    <tr><td><b>서울</b></td><td class="r"><b>4.1명</b> (최저)</td><td class="r"><b>539.2</b> (상위권)</td><td class="r">30.0%</td></tr>
+  </table>
+  <p class="body">신고 위험은 전남이 서울의 <span class="hl"><b>5.2배</b></span>인데, 에어컨 사용량은 전남이 서울의 <b>56%</b>다. 시도별 사용량 격차는 강원(238.6) 대 경기(610.9), <b>2.56배</b> — 소득 격차(2.15배)보다 크다. 가장 덥다는 대구조차 서울의 73%만 켠다.</p>
+  <figure><img class="infoimg" src="vol02w/info5.png" alt="인포5"><figcaption>인포그래픽 ④ 위험의 지도 vs 냉방의 지도</figcaption></figure>
+  <p class="body">이 어긋남 앞에서 수탈의 논증을 공간에 맞게 접자. <b>골목의 폐열은 도시의 밤을 데우고, 발전소의 탄소는 농촌의 여름을 데운다.</b> 두 경로 모두에서 시원함의 비용은 켜지 못한 자에게 청구된다.</p>
+  <p class="src">출처: HEPS 13차 시도별 연구소 자체 분석 · 질병관리청(2025). 신고율과 사용량의 관계는 상관관계로, 인과로 읽지 않도록 유의.</p>
+  <div class="ft"><div class="who">명랑사회연구소</div><div class="pg">07</div></div>
+</div>
+
+<!-- ═══════════ p.8 INFOGRAPHIC ═══════════ -->
+<div class="page">
+  <div class="rh"><div class="l"><b>특집</b> <span>같은 35도, 다른 여름</span></div><div class="r">INFOGRAPHIC</div></div>
+  <div class="kicker">인포그래픽 · 한 장으로 보는 폭염 불평등</div>
+  <h1 class="title">가장 못 켜는 사람이,<br>가장 많이 죽는다</h1>
+  <figure><img class="infoimg" src="vol02w/info4.png" alt="인포4"><figcaption>인포그래픽 ⑤ 사용의 격차 × 죽음의 격차 — 같은 자리에 포개진다</figcaption></figure>
+  <div class="cards">
+    <div class="card" style="border-color:#EC5B27"><div class="n" style="color:#EC5B27">272<sub>kWh</sub></div><div class="c">노인 1인가구의 연간 에어컨 사용량 — 다른 가구(527kWh)의 절반.</div></div>
+    <div class="card" style="border-color:#2E72B8"><div class="n" style="color:#2E72B8">1.9<sub>배</sub></div><div class="c">전용 33㎡ 미만(333kWh) 대 132㎡ 이상(632kWh) — 좁고 더운 집일수록 덜 켠다.</div></div>
+    <div class="card" style="border-color:#7BA05B"><div class="n" style="color:#7BA05B">338<sub>kWh</sub></div><div class="c">사글세·무상 거주 가구의 사용량. 자가(471kWh)보다 월세(376kWh)가, 그보다 더 못 켠다.</div></div>
+  </div>
+  <div class="ft"><div class="who">명랑사회연구소</div><div class="pg">08</div></div>
+</div>
+
+<!-- ═══════════ p.9 FIELD ═══════════ -->
+<div class="page">
+  <div class="rh"><div class="l"><b>특집</b> <span>같은 35도, 다른 여름</span></div><div class="r">FIELD</div></div>
+  <div class="kicker">현장·제도 · 리포트 ②</div>
+  <h1 class="title">에너지바우처는<br>그 문 앞에서 멈춘다</h1>
+  <p class="body">우리 사회가 더위에 맞서 가진 거의 유일한 복지 장치, 에너지바우처. 2026년 지원액은 1인 세대 연 <b>295,200원</b>으로 인상됐고 대상은 차상위계층 전체로 넓어졌으며 계절별 사용 한도도 폐지됐다. 분명한 진전이다. 그러나 이 제도는 두 개의 문턱에서, 정작 가장 위험한 사람을 걸러낸다.</p>
+  <h2 class="sub">첫째 문턱 — 자격</h2>
+  <p class="body">소득 기준(수급자)과 인구학적 요건(노인·영유아·장애인 등)의 <b>이중 관문</b>. 그러나 더위의 위험은 수급 경계를 따라 분포하지 않는다. 조문영이 『빈곤 과정』에서 지적했듯, 빈곤을 '수급'이라는 컨테이너에 격리하면 그 바깥의 위험은 보이지 않게 된다.</p>
+  <h2 class="sub">둘째 문턱 — 신청주의</h2>
+  <p class="body">바우처는 자동으로 오지 않는다. 이 한 줄의 절차가 정보·접근성이 약한 사람을 정확히 거른다. 바우처 <span class="hl">미사용액의 <b>64.7%</b>가 1인가구</span>에서 발생했다(2022 국감). 중위소득 45% 이하 가구의 에너지빈곤율은 <b>58.7%</b> — 연구자들의 제언은 한결같다. 인구학적 기준을 폐지하고, 위험 그 자체에 제도를 맞추라.</p>
+  <div class="quote">위험이 가장 큰 집단과,<br>제도가 닿는 집단이 <span class="o">어긋난다.</span></div>
+  <p class="src">출처: 산업통상자원부·한국에너지공단(energyv.or.kr, 2026 공고); 정운천 의원실(2022 국감); 신동면·강은혜, 정책분석평가학회보 34(2); 조문영(2022).</p>
+  <div class="ft"><div class="who">명랑사회연구소</div><div class="pg">09</div></div>
+</div>
+
+<!-- ═══════════ p.10 COLUMN ═══════════ -->
+<div class="page">
+  <div class="rh"><div class="l"><b>특집</b> <span>같은 35도, 다른 여름</span></div><div class="r">COLUMN</div></div>
+  <div class="kicker">칼럼</div>
+  <h1 class="title">서늘함은 언제<br>사유재가 되었나</h1>
+  <p class="body">그리 오래되지 않은 여름의 풍경을 떠올려 본다. 정자나무 그늘, 우물가의 등목, 해가 지면 골목에 내놓던 평상. 서늘함은 마을이 함께 가진 것이었다. 좋은 그늘은 누군가의 소유가 아니었고, 밤의 서늘한 공기는 값을 치르고 사는 물건이 아니었다. 부자와 빈자의 여름이 지금처럼 다르지 않았던 것은, 그때가 더 평등한 시대여서가 아니라 <span class="hl">서늘함이 아직 시장 바깥에 있었기 때문</span>이다.</p>
+  <p class="body">에어컨은 그 관계를 뒤집었다. 서늘함은 방 단위로 쪼개져 상품이 되었고, 상품이 된 서늘함은 소득의 함수가 되었다. 이번 호가 확인한 2.15배의 사용 격차는 그 함수의 기울기다. 여기까지라면 서늘함은 여느 재화와 다를 게 없다. 자동차를 더 좋은 것으로 타고, 외식을 더 자주 하는 것처럼, 더 시원한 여름을 사는 것뿐이다.</p>
+  <p class="body">그러나 서늘함은 여느 재화와 결정적으로 다르다. 한 방의 서늘함은 제 비용의 일부 — 폐열과 탄소 — 를 값을 치른 사람이 아니라 <b>모두의 대기에</b> 지불하게 한다. 사적으로 소비되고 공적으로 청구되는 상품. 그래서 서늘함의 사유화가 진행될수록 그것을 사지 못한 사람의 여름은 그만큼 더 뜨거워진다. 평상과 등목의 시대로 돌아가자는 말이 아니다. 이 거래의 장부가 정직하게 적히고 있는지 묻자는 말이다.</p>
+  <p class="body">그렇다면 폭염 대책의 질문도 달라져야 한다. "취약계층이 어떻게 견디게 할까"는 절반의 질문이다. 나머지 절반은 <span class="hl">"사지 않아도 누리는 서늘함의 몫을 어떻게 되돌릴까"</span>다. 가로수와 그늘막, 단열이 되는 집, 문턱 없는 무더위쉼터 — 서늘함의 공공 지분이 커질수록 폭염은 덜 치명적인 계절이 된다. 원래 여름밤은, 모두의 것이었다.</p>
+  <div class="ft"><div class="who">명랑사회연구소</div><div class="pg">10</div></div>
+</div>
+
+<!-- ═══════════ p.11 CONCLUSION ═══════════ -->
+<div class="page">
+  <div class="rh"><div class="l"><b>특집</b> <span>같은 35도, 다른 여름</span></div><div class="r">CONCLUSION</div></div>
+  <div class="kicker">맺는 글 · 정책 제언</div>
+  <h1 class="title">위험이 가장 큰 곳에<br>제도가 닿으려면</h1>
+  <h2 class="sub">하나 — 제도를 위험에 정렬한다</h2>
+  <p class="body">신청주의를 직권·자동 지급으로 바꾸고, 수급 경계에 갇힌 자격을 위험 기반으로 넓힌다. 위험의 절반은 일터에 있다 — 폭염 작업중지 기준과 휴게 보장을 실질화해, 실외 79.2%의 발생 현장에 제도가 먼저 도착하게 한다.</p>
+  <h2 class="sub">둘 — 부담을 일으킨 자에게 비용을 청구한다</h2>
+  <p class="body">오염자 부담 원칙의 일차 과녁은 상업·산업 냉방과 전력 생산 구조다. 개문냉방 규제의 실효화, 탄소가격의 정직한 반영, 가정용 내 다소비 구간의 정교화(대가족·병약자 가구는 예외 설계). 그 재원으로 취약계층의 여름을 보전하는 순환 — 시원함을 누린 자의 비용으로, 누리지 못한 자의 안전을 산다.</p>
+  <h2 class="sub">셋 — 냉방을 권리로 선언한다</h2>
+  <p class="body">적정 실내온도를 유지할 능력은 보편적 기본 서비스의 일부다. 다만 냉방권은 <b>에어컨의 권리가 아니라 서늘한 집의 권리</b>다. 주거 단열 개보수(세입자-집주인의 어긋난 유인 교정), 패시브 냉방과 그린인프라, 실질적 공공냉방까지 — 켜지 않고도 서늘할 수 있는 조건을 함께 보장해야 한다.</p>
+  <div class="quote">더위는 평등하지 않았다. 그러나 책임은 평등하게 물을 수 있고,<br><span class="o">제도는 평등하게 닿을 수 있다.</span></div>
+  <div class="ft"><div class="who">명랑사회연구소</div><div class="pg">11</div></div>
+</div>
+
+<!-- ═══════════ p.12 GLOSSARY ═══════════ -->
+<div class="page">
+  <div class="rh"><div class="l"><b>특집</b> <span>같은 35도, 다른 여름</span></div><div class="r">GLOSSARY</div></div>
+  <div class="kicker">용어풀이</div>
+  <h1 class="title">이번 호의 키워드</h1>
+  <table class="t">
+    <tr><th style="width:36mm">용어</th><th>풀이</th></tr>
+    <tr><td><b>온열질환</b></td><td>열사병·열탈진 등 더위가 직접 원인인 질환. 응급실감시체계로 집계된다.</td></tr>
+    <tr><td><b>응급실감시체계</b></td><td>참여 의료기관 응급실 신고 기반 집계 — 전수조사가 아니라 '하한선'이다.</td></tr>
+    <tr><td><b>초과사망</b></td><td>폭염 기간에 평년 대비 늘어난 사망. 감시체계 숫자보다 훨씬 크다.</td></tr>
+    <tr><td><b>부정적 외부효과</b></td><td>행위의 비용이 시장을 거치지 않고 제3자에게 전가되는 것. 실외기의 폐열.</td></tr>
+    <tr><td><b>오염자 부담 원칙</b></td><td>부담을 일으킨 자가 비용을 진다(OECD 1972, 환경정책기본법 제7조).</td></tr>
+    <tr><td><b>도시 열섬</b></td><td>도심이 교외보다 뜨거워지는 현상. 여름 표면온도 차 평균 2~4℃, 밤에 더 강하다.</td></tr>
+    <tr><td><b>에너지바우처</b></td><td>냉·난방 에너지 비용 지원 이용권. 2026년 1인 세대 연 295,200원.</td></tr>
+    <tr><td><b>차상위계층</b></td><td>수급 기준 바로 위의 저소득층. 2025.11부터 바우처 대상 포함.</td></tr>
+    <tr><td><b>에너지빈곤율</b></td><td>중위소득 45% 이하 가구는 58.7%(광열수도비 기준, 2022).</td></tr>
+    <tr><td><b>냉방권</b></td><td>적정 실내온도를 유지할 권리. '에어컨의 권리'가 아니라 '서늘한 집의 권리'.</td></tr>
+  </table>
+  <figure style="margin-top:4mm"><img class="infoimg" src="vol02w/wordcloud.png" alt="특집 워드클라우드" style="border:1px solid #e6e0d6"><figcaption>이번 호 특집 본문에서 자주 등장한 말들</figcaption></figure>
+  <div class="ft"><div class="who">명랑사회연구소</div><div class="pg">12</div></div>
+</div>
+
+<!-- ═══════════ p.14-15 명랑 건강: 계단은 내려올 때 아프다 ═══════════ -->
+<div class="page">
+  <div class="rh"><div class="l"><b>신설 코너</b> <span>명랑 건강 ① — 데이터로 읽는 몸</span></div><div class="r">NEW · HEALTH</div></div>
+  <div class="kicker kc-teal">NEW · 명랑 건강 ① — 데이터로 읽는 몸</div>
+  <h1 class="title">계단은 내려올 때 아프다<br><span style="font-size:14pt; color:#6b6559">무릎이 수상해진 중년을 위한 내려가기의 기술</span></h1>
+  <p class="body">계단 앞에서 무릎이 먼저 아는 날이 있다. 어제 많이 걸었거나, 나이 앞자리가 바뀌었거나, 한 번쯤 무릎에 물이 차 봤다면 — 오르막보다 내리막이 겁난다는 것을 몸이 먼저 안다. 엄살이 아니다. 역학적으로 근거가 있는 이야기다. 오늘은 왜 하필 <b>내려올 때</b> 아픈지, 그리고 어떻게 내려가야 무릎이 덜 억울한지를 다룬다.</p>
+  <h2 class="sub">오를 땐 심장이, 내려올 땐 무릎이</h2>
+  <p class="body">계단을 오르는 동작은 근육이 짧아지며 몸을 밀어 올리는 <b>구심성 수축</b>이다. 숨이 차고 허벅지가 뻐근하니 힘든 줄 바로 안다. 내려오는 동작은 반대다. 근육이 길어지면서 떨어지는 몸의 속도를 버티는 <b>원심성 수축</b> — 허벅지 앞 대퇴사두근이 브레이크를 잡는다. 조용해 보이지만, 이 브레이크에 걸리는 힘이 만만치 않다.</p>
+  <p class="body">계단 보행 역학 연구(McFadyen &amp; Winter, 1988 등)에 따르면, 내려올 때 무릎 앞쪽 슬개대퇴 관절에 실리는 부하는 <span class="hl">평지 걷기의 약 두 배</span>. 오를 때는 숨이 차서 힘든 줄 알지만, 내려올 때의 부담은 통증이 쌓인 뒤에야 알아챈다. 무릎 통증이 유독 '계단 내려올 때' 먼저 신호를 보내는 이유다.</p>
+  <figure><img class="infoimg" src="vol02w/knee1.png" alt="무릎 부하 비교" style="border:1px solid #e6e0d6"><figcaption>[그림 1] 계단 내려오기의 무릎 관절 부하는 평지 걷기의 약 2배</figcaption></figure>
+  <div class="quote">오를 땐 심장이 힘들고,<br><span class="o">내려올 땐 무릎이 힘들다.</span></div>
+  <div class="ft"><div class="who">명랑 건강 — 데이터로 읽는 몸</div><div class="pg">13</div></div>
+</div>
+
+<div class="page">
+  <div class="rh"><div class="l"><b>신설 코너</b> <span>명랑 건강 ① — 데이터로 읽는 몸</span></div><div class="r">NEW · HEALTH</div></div>
+  <div class="kicker kc-teal">계단은 내려올 때 아프다 — 이어서</div>
+  <div class="cols2">
+    <div>
+      <h2 class="sub">계단의 주역들</h2>
+      <p class="body">계단에서 일하는 근육을 알아 두면 관리가 쉬워진다. 주역은 단연 <b>대퇴사두근</b> — 오르기·내려오기 모두를 책임진다. 둔근은 오를 때 몸통을 끌어올리고, 종아리는 밀어 올리며 착지를 조절하고, 앞정강근은 발끝을 들어 다음 칸에 정확히 얹게 한다. 경사로가 엉덩이·허벅지의 일이라면, 계단은 무릎의 일이다 — 접었다 펴는 각도가 큰 만큼 부하가 무릎으로 모인다.</p>
+      <p class="body">그러니 무릎을 지키는 열쇠도 근육에 있다. 대퇴사두근이 튼튼할수록 브레이크가 부드럽게 걸리고, 관절 대신 근육이 힘을 받아 낸다.</p>
+    </div>
+    <div><figure style="margin:11mm 0 0 0;"><img class="infoimg" src="vol02w/knee2.png" alt="계단에 쓰는 다리 근육" style="border:1px solid #e6e0d6; margin-bottom:0"><figcaption style="margin-bottom:0">[그림 2] 계단에 쓰는 다리 근육 — 대퇴사두근(청록)이 주역</figcaption></figure></div>
+  </div>
+
+  <h2 class="sub">힘은 발끝에서 무릎으로 흐른다</h2>
+  <p class="body">내려서는 한 걸음 동안 몸에는 두 개의 <b>힘점</b>이 생긴다. 먼저 내딛는 발의 <b>발볼</b>이 착지 충격을 처음 받아 내고(힘점 ②), 그 사이 위 칸에서 버티는 다리의 <b>무릎 앞(슬개대퇴 관절)</b>에는 몸을 천천히 내려놓느라 평지의 약 2배 하중이 걸린다(힘점 ①). 충격이 발볼 → 발목 → 종아리 → 허벅지 순서로 <b>아래에서 위로 나뉘어 흐를수록</b> 무릎이 홀로 받는 몫이 줄어든다 — 다음 면의 '앞발 착지'가 중요한 이유다.</p>
+  <figure>
+  <svg width="100%" viewBox="0 0 900 330" style="background:#F7F1E4; border:1px solid #e6e0d6; border-radius:8px">
+    <!-- 계단 -->
+    <rect x="40" y="190" width="270" height="140" fill="#EAE0CC"/>
+    <rect x="310" y="260" width="250" height="70" fill="#EAE0CC"/>
+    <line x1="40" y1="190" x2="310" y2="190" stroke="#D8CBB0" stroke-width="2.5"/>
+    <line x1="310" y1="190" x2="310" y2="260" stroke="#D8CBB0" stroke-width="2.5"/>
+    <line x1="310" y1="260" x2="560" y2="260" stroke="#D8CBB0" stroke-width="2.5"/>
+    <!-- 사람: 내려가는 중 (오른쪽 방향) -->
+    <circle cx="243" cy="26" r="14" fill="#4A4438"/>
+    <line x1="238" y1="40" x2="218" y2="98" stroke="#4A4438" stroke-width="7" stroke-linecap="round"/>
+    <!-- 버티는 다리(뒤): 허벅지 청록, 종아리 초록, 발은 윗칸 위 -->
+    <line x1="218" y1="98" x2="252" y2="140" stroke="#3AA6A6" stroke-width="10" stroke-linecap="round"/>
+    <line x1="252" y1="140" x2="222" y2="184" stroke="#7BA05B" stroke-width="9" stroke-linecap="round"/>
+    <line x1="218" y1="186" x2="255" y2="186" stroke="#4A4438" stroke-width="7" stroke-linecap="round"/>
+    <!-- 무릎 힘점 ① -->
+    <circle cx="260" cy="138" r="16" fill="none" stroke="#D8491A" stroke-width="3.5"/>
+    <circle cx="260" cy="138" r="5.5" fill="#D8491A"/>
+    <!-- 내딛는 다리(앞): 허벅지 회색, 정강이 파랑, 발볼이 아랫칸에 착지 -->
+    <line x1="218" y1="98" x2="292" y2="160" stroke="#9C9284" stroke-width="9" stroke-linecap="round"/>
+    <line x1="292" y1="160" x2="338" y2="242" stroke="#2E72B8" stroke-width="9" stroke-linecap="round"/>
+    <line x1="334" y1="246" x2="362" y2="257" stroke="#4A4438" stroke-width="6" stroke-linecap="round"/>
+    <!-- 발볼 힘점 ② -->
+    <circle cx="360" cy="257" r="9" fill="#F2A93B" stroke="#C97F2E" stroke-width="2"/>
+    <!-- 힘의 흐름: 발볼→정강이→허벅지 -->
+    <path d="M 372 248 C 396 205, 372 160, 322 142" fill="none" stroke="#8A6B4A" stroke-width="3" stroke-dasharray="7 5"/>
+    <path d="M 322 142 l 14 -3 l -5 13" fill="none" stroke="#8A6B4A" stroke-width="3"/>
+    <!-- 바닥 표기 -->
+    <text x="80" y="215" font-family="Noto Sans CJK KR" font-size="13" fill="#A89B85">윗칸 — 버티는 다리</text>
+    <text x="360" y="285" font-family="Noto Sans CJK KR" font-size="13" fill="#A89B85">아랫칸 — 내딛는 발</text>
+    <!-- 레전드 -->
+    <g font-family="Noto Sans CJK KR">
+      <circle cx="600" cy="52" r="12" fill="none" stroke="#D8491A" stroke-width="3"/>
+      <circle cx="600" cy="52" r="4.5" fill="#D8491A"/>
+      <text x="625" y="48" font-size="19" font-weight="700" fill="#3A2208">힘점 ① 무릎 앞 (슬개대퇴)</text>
+      <text x="625" y="72" font-size="15" fill="#6b6559">버티는 다리 — 평지 걷기의 약 2배 하중</text>
+      <circle cx="600" cy="112" r="9" fill="#F2A93B" stroke="#C97F2E" stroke-width="2"/>
+      <text x="625" y="108" font-size="19" font-weight="700" fill="#3A2208">힘점 ② 발볼 (앞발 착지점)</text>
+      <text x="625" y="132" font-size="15" fill="#6b6559">내딛는 발 — 착지 충격을 첫 번째로 흡수</text>
+      <line x1="588" y1="168" x2="612" y2="168" stroke="#8A6B4A" stroke-width="3" stroke-dasharray="7 5"/>
+      <text x="625" y="174" font-size="19" font-weight="700" fill="#3A2208">힘의 흐름</text>
+      <text x="625" y="198" font-size="15" fill="#6b6559">발볼 → 발목 → 종아리 → 허벅지 —</text>
+      <text x="625" y="218" font-size="15" fill="#6b6559">순서대로 나눠 받을수록 무릎 몫이 줄어든다</text>
+      <line x1="588" y1="252" x2="612" y2="252" stroke="#3AA6A6" stroke-width="8" stroke-linecap="round"/>
+      <text x="625" y="258" font-size="15" fill="#6b6559"><tspan font-weight="700" fill="#2E7B7B">청록</tspan> 대퇴사두근(브레이크) · <tspan font-weight="700" fill="#5C8A3C">초록</tspan> 종아리</text>
+      <line x1="588" y1="286" x2="612" y2="286" stroke="#2E72B8" stroke-width="8" stroke-linecap="round"/>
+      <text x="625" y="292" font-size="15" fill="#6b6559"><tspan font-weight="700" fill="#2E72B8">파랑</tspan> 앞정강근(발끝 조준)</text>
+    </g>
+  </svg>
+  <figcaption>[그림 3] 내려서는 한 걸음의 두 힘점 — 앞발이 일해야 무릎이 덜 일한다</figcaption>
+  </figure>
+  <div class="ft"><div class="who">명랑 건강 — 데이터로 읽는 몸</div><div class="pg">14</div></div>
+</div>
+
+<div class="page">
+  <div class="rh"><div class="l"><b>신설 코너</b> <span>명랑 건강 ① — 데이터로 읽는 몸</span></div><div class="r">NEW · HEALTH</div></div>
+  <div class="kicker kc-teal">계단은 내려올 때 아프다 — 실전편</div>
+  <h2 class="sub">무릎을 아끼는 내려가기 다섯 가지</h2>
+  <div class="recipe" style="border-color:#49D3C4">
+    <ol class="rc-steps">
+      <li><b>앞발(볼)부터</b> 딛는다 — 힘점 ②가 먼저 일하게 해서, 발목과 종아리가 충격을 흡수한다.</li>
+      <li>무릎은 잠그지 말고 <b>부드럽게 조금 굽힌 채</b> 내려간다.</li>
+      <li>체중을 쿵 싣지 말고, 뒷발 쪽 허벅지로 <b>천천히 몸을 내려앉힌다</b> — 힘점 ①의 하중을 근육이 받아 낸다.</li>
+      <li>힘든 날엔 <b>한 칸에 두 발씩</b>, 난간은 당당하게 쓴다.</li>
+      <li>평소엔 <b>스텝다운 운동</b> — 낮은 계단에서 한 발로 천천히 내려서는 연습이 대퇴사두근의 브레이크 힘을 그대로 길러 준다.</li>
+    </ol>
+  </div>
+  <figure><img class="infoimg" src="vol02w/knee3.png" alt="내려오는 폼 비교" style="max-height:66mm; object-fit:contain; border:1px solid #e6e0d6"><figcaption>[그림 4] 앞발 착지·부드러운 무릎(왼쪽)이 정답 — 뒤꿈치 쿵·뻣뻣한 무릎(오른쪽)은 부하를 무릎에 집중시킨다</figcaption></figure>
+  <p class="body">마지막으로 한 가지. 난간은 당당하게 잡자. 엘리베이터와 에스컬레이터도 게으름이 아니라 <b>무릎의 연금</b>이다 — 오늘 아낀 무릎이 십 년 뒤에도 산에 간다. 다음 편은 중년의 몸 시리즈 두 번째, 어느 관절로 갈지 제보를 받는다. 어깨인가, 허리인가.</p>
+  <p class="src">연구·집필: 박지민(명랑사회연구소 · 스포츠재활처방사 1급) · 참고: McFadyen &amp; Winter(1988), Journal of Biomechanics · <span style="white-space:nowrap">제보: justice_park@kakao.com</span></p>
+  <div class="ft"><div class="who">명랑 건강 — 데이터로 읽는 몸</div><div class="pg">15</div></div>
+</div>
+
+<!-- ═══════════ p.13 미술기행 ═══════════ -->
+<div class="page">
+  <div class="rh"><div class="l"><b>연재</b> <span>명랑한 미술관 · 일본 미술기행 ②</span></div><div class="r">FEATURE</div></div>
+  <div class="kicker kc-blue">연재 · 명랑한 미술관 ② 도쿄</div>
+  <h1 class="title">거장을 보는 또 하나의 눈<br><span style="font-size:14pt; color:#6b6559">피카소 meets 폴 스미스 — 국립신미술관</span></h1>
+  <div class="cols2">
+    <div style="flex:1.05">
+      <figure><img class="ph" style="height:96mm" src="vol02w/picasso-hero.jpg" alt="할리퀸 벽"><figcaption>어릿광대 의상 무늬가 벽으로 번진 방. 폴 스미스의 공간 연출 (직접 촬영, 2026.6)</figcaption></figure>
+      <figure><img class="ph" style="height:52mm" src="vol02w/picasso-green.jpg" alt="초록방"><figcaption>《풀밭 위의 점심》 연작의 방 — 바닥까지 초록</figcaption></figure>
+    </div>
+    <div>
+      <p class="body">전시장에 들어서자마자 알았다. 이번에 보러 온 것은 피카소만이 아니라는 것을. 하늘색 벽의 긴 복도에 노란 문틀이 리듬처럼 박혀 있었다. 파리 국립피카소미술관 소장품 약 80점을, 폴 스미스가 공간째로 다시 디자인한 전시다.</p>
+      <p class="body">그 개입은 장식이 아니라 해석이었다. 어릿광대로 분한 파울로의 초상은 어릿광대 의상 무늬 그대로인 다이아몬드 벽 위에 걸렸다. 투우의 방은 통째로 투우장의 빨강, 마리테레즈의 방은 폴 스미스의 서명 같은 스트라이프 — 1930년대에 이미 줄무늬로 연인을 그렸던 피카소에게 보내는, 줄무늬 디자이너의 답장.</p>
+      <p class="body">마지막 방, 전시 포스터 수백 장의 벽 앞에서 이 전시의 진짜 주제가 보였다. 우리는 피카소를 '본' 적이 있는가, 피카소라는 '이미지'를 학습해 온 것인가. 경건함을 걷어내고 유희를 입히자, 역설적으로 피카소가 평생 해 온 일 — 놀이라는 방법론 — 이 선명해진다. 큐레이션이 곧 비평이 될 수 있음을 이만큼 명랑하게 증명하는 사례를 나는 알지 못한다.</p>
+      <p class="body">데이터로 사회를 읽는 일도 같은 작업인지 모른다. 같은 자료라도 어떤 벽에 거느냐에 따라 다른 것이 보인다. 이번 호에서 폭염을 '날씨'의 벽에서 떼어 '불평등'의 벽에 다시 건 것처럼.</p>
+      <div class="databox"><h4>관람 정보</h4>국립신미술관 기획전시실 2E (롯폰기) · <b>~2026.9.21</b> · 화 휴관(8/11 개관, 8/12 휴관) · 10:00~18:00, 금·토 ~20:00 · 당일 일반 2,400엔 · 노기자카역 6번 출구 직결</div>
+    </div>
+  </div>
+  <p class="src">사진: 명랑사회연구소 — 2026.6 국립신미술관 「피카소 meets 폴 스미스」 전시 풍경 · 작품 저작권 © Succession Picasso</p>
+  <div class="ft"><div class="who">다음 호 — ③ 론 뮤익 (모리미술관, ~9.23)</div><div class="pg">16</div></div>
+</div>
+
+<!-- ═══════════ p.14 건축 산책 ═══════════ -->
+<div class="page">
+  <div class="rh"><div class="l"><b>신설 코너</b> <span>일본 미술관 건축 산책 ①</span></div><div class="r">NEW · ARCHITECTURE</div></div>
+  <div class="kicker kc-blue">NEW · 일본 미술관 건축 산책 ①</div>
+  <h1 class="title">파도 뒤의 원뿔<br><span style="font-size:14pt; color:#6b6559">국립신미술관, 구로카와 기쇼의 마지막 물결</span></h1>
+  <div class="cols2">
+    <div>
+      <p class="body">이번 호 미술기행의 무대인 국립신미술관은, 전시를 보기 전부터 이미 하나의 전시다. 롯폰기의 초록 사이로 유리 파사드가 파도처럼 굽이친다. 설계자는 구로카와 기쇼(1934-2007) — 건축을 생물처럼 갱신되는 신진대사로 사고한 '메타볼리즘'의 기수. 이 미술관은 2007년 개관, 그가 세상을 떠난 해에 문을 연 사실상의 유작이다.</p>
+      <p class="body">안으로 들어서면 진짜 주인공이 나타난다. 거대한 역원뿔 두 기가 아트리움에서 솟아오르고, 그 꼭대기가 카페다. 커피를 마시는 사람들이 공중의 원뿔 위에 떠 있고, 물결치는 유리가 흘려보낸 빛이 콘크리트 곡면을 타고 내려온다.</p>
+      <p class="body">또 다른 급진성은 보이지 않는다. <b>소장품이 없다.</b> 기획전과 공모전만으로 운영되는 '빈 그릇'의 미술관 — 일본 최대급 14,000㎡를 '무엇이든 담길 수 있는 상태'로 비워 둔다. 갱신을 꿈꾼 메타볼리스트의 마지막 건물이 '계속 교체되는 미술관'이라는 결말.</p>
+      <p class="body">폭염의 계절에 한 가지 더. 이 유리 파사드는 전시동과의 사이에 완충 공간을 둔 이중 외피로, 여름의 열부하를 줄이도록 설계됐다. 원뿔 위 카페에서 유리 한 장 너머의 35도를 바라보는 경험 — 특집을 읽고 나면 그 시원함이 조금 다르게 느껴질지도 모른다.</p>
+      <div class="memo"><b>산책 메모</b> — 노기자카역 6번 출구 직결, 한여름에도 땀 없이 도착. 공식 건축 가이드 앱 'CONIC'으로 셀프 투어 가능.</div>
+    </div>
+    <div style="flex:0.9">
+      <figure><img class="ph" style="height:96mm" src="vol02w/arch-cone.jpg" alt="역원뿔"><figcaption>아트리움의 역원뿔 — 꼭대기가 카페다</figcaption></figure>
+      <figure><img class="ph" style="height:52mm" src="vol02w/arch-esc.jpg" alt="에스컬레이터"><figcaption>파사드 안쪽, 빛의 완충 공간</figcaption></figure>
+    </div>
+  </div>
+  <div class="memo"><b>글·사진: 편집장 박지민</b> — 전시보다 먼저 건물이 말을 걸 때가 있다. 「일본 미술관 건축 산책」은 전시를 담는 그릇을 읽는 코너다.</div>
+  <div class="ft"><div class="who">다음 호 — ② 모리미술관과 롯폰기 힐스, '수직 도시' 위의 미술관</div><div class="pg">17</div></div>
+</div>
+
+<!-- ═══════════ p.19-20 부리의 명랑음악당 ═══════════ -->
+<div class="page">
+  <div class="rh"><div class="l"><b>신설 코너</b> <span>부리의 명랑음악당 ①</span></div><div class="r">NEW · MUSIC</div></div>
+  <div class="kicker kc-amber">NEW · 부리의 명랑음악당 ① — 악보 속으로</div>
+  <h1 class="title">음표에 숨긴 이름들<br><span style="font-size:14pt; color:#6b6559">클래식 악보 속 이름 암호 해독기 · 첫 회 — 바흐의 서명</span></h1>
+  <p class="body">작곡가들에게는 오래된 장난이 하나 있다. 악보 속에 이름을 묻어 두는 것이다. 규칙은 간단하다. 독일식 음이름에서는 알파벳이 곧 음표다 — A(라)부터 G(솔)까지, 여기에 독일어만의 두 글자가 더해진다. <b>B는 시♭, H는 시</b>. 그리고 Es(미♭)는 발음이 알파벳 <b>S</b>와 같다. 이 규칙만 있으면 이름 철자를 선율로 바꿀 수 있다. 이 연재는 그렇게 밀봉된 암호들을 한 회에 하나씩 연다. 첫 회는 당연히, 이 놀이의 발명자 — 바흐다.</p>
+
+  <h2 class="sub">자기 이름이 선율이 되는 행운</h2>
+  <div class="cols2">
+    <div style="flex:1.25">
+      <p class="body">요한 제바스티안 바흐(J. S. <b>Bach</b>)의 성은 네 철자가 전부 음이 된다 — 시♭(B), 라(A), 도(C), 시(H). 이건 아무에게나 오는 행운이 아니다(모차르트의 M도, 베토벤의 V도 음이 아니다). 게다가 이 네 음은 반음으로 비틀리며 감기는, 묘하게 애수 어린 선율이 된다. 네 음을 잇는 선이 악보 위에서 십자 모양을 그린다 하여 십자가의 상징으로 읽는 해석도 있다. 동시대인들도 이 행운을 알았다. 1732년 발터의 『음악사전』은 이렇게 적었다. <span class="hl">"b-a-c-h 철자는 그 순서대로 하나의 선율이 된다. 이 특이함은 라이프치히의 바흐 씨가 발견했다."</span> 발견자가 본인으로 등재된, 역사상 가장 짧은 특허인 셈이다.</p>
+    </div>
+    <div><svg width="214" height="118" viewBox="0 0 214 118" style="background:#FFFdf8"><text x="12" y="14" font-size="13" font-weight="700" fill="#3A2208">B-A-C-H · 바흐의 서명</text><line x1="12" y1="24" x2="202" y2="24" stroke="#B8AC94" stroke-width="1.4"/><line x1="12" y1="36" x2="202" y2="36" stroke="#B8AC94" stroke-width="1.4"/><line x1="12" y1="48" x2="202" y2="48" stroke="#B8AC94" stroke-width="1.4"/><line x1="12" y1="60" x2="202" y2="60" stroke="#B8AC94" stroke-width="1.4"/><line x1="12" y1="72" x2="202" y2="72" stroke="#B8AC94" stroke-width="1.4"/><text x="33" y="59" font-size="15" fill="#C23A10" font-weight="700">♭</text><ellipse cx="52" cy="54" rx="7.5" ry="5.5" fill="#2E3A48"/><text x="52" y="94" font-size="13" font-weight="700" fill="#C23A10" text-anchor="middle">B</text><text x="52" y="110" font-size="11" fill="#8a857c" text-anchor="middle">시♭</text><ellipse cx="92" cy="60" rx="7.5" ry="5.5" fill="#2E3A48"/><text x="92" y="94" font-size="13" font-weight="700" fill="#C23A10" text-anchor="middle">A</text><text x="92" y="110" font-size="11" fill="#8a857c" text-anchor="middle">라</text><ellipse cx="132" cy="48" rx="7.5" ry="5.5" fill="#2E3A48"/><text x="132" y="94" font-size="13" font-weight="700" fill="#C23A10" text-anchor="middle">C</text><text x="132" y="110" font-size="11" fill="#8a857c" text-anchor="middle">도</text><text x="157" y="59" font-size="15" fill="#C23A10" font-weight="700">♮</text><ellipse cx="176" cy="54" rx="7.5" ry="5.5" fill="#2E3A48"/><text x="176" y="94" font-size="13" font-weight="700" fill="#C23A10" text-anchor="middle">H</text><text x="176" y="110" font-size="11" fill="#8a857c" text-anchor="middle">시</text></svg></div>
+  </div>
+
+  <h2 class="sub">서명하다 멈춘 악보</h2>
+  <p class="body">바흐는 이 서명을 아껴 두었다가 생애 마지막 대작에 꺼내 들었다. 「푸가의 기법」의 마지막 미완성 푸가 — 세 개의 주제가 차례로 쌓이는 이 거대한 푸가에서, 세 번째 주제로 등장하는 것이 바로 B-A-C-H 네 음이다. 그리고 악보는 그 서명이 울리기 시작한 대목에서 끊긴다. 아들 카를 필리프 에마누엘은 그 악보 여백에 이렇게 적어 두었다. <b>"B-A-C-H의 이름이 대주제로 등장하는 이 자리에서, 작곡가는 세상을 떠났다."</b> 실제 집필 시점을 두고는 학자들의 논쟁이 있지만, 어느 쪽이든 남은 그림은 같다 — 자신의 이름을 서명하다 펜을 놓은 작곡가. 연구자들은 바흐의 베이스라인 곳곳에서도 이 네 음을 발견한다. "우연이라기엔 너무 자주 나온다"는 것이 중론이다.</p>
+  <div class="quote">가장 짧은 자서전은,<br><span class="o">네 개의 음표였다.</span></div>
+  <div class="ft"><div class="who">부리의 명랑음악당 — 악보에도 근거를</div><div class="pg">18</div></div>
+</div>
+
+<div class="page">
+  <div class="rh"><div class="l"><b>신설 코너</b> <span>부리의 명랑음악당 ①</span></div><div class="r">NEW · MUSIC</div></div>
+  <div class="kicker kc-amber">음표에 숨긴 이름들 — 첫 회, 이어서</div>
+
+  <h2 class="sub">부활, 그리고 400곡의 헌정</h2>
+  <p class="body">바흐가 죽자 서명도 함께 잊혔다. 다시 울리기 시작한 것은 19세기 — 멘델스존이 「마태수난곡」을 79년 만에 되살린(1829) 뒤, 낭만주의자들은 바흐를 재발견하며 그의 이름 네 음을 <b>헌정의 언어</b>로 삼았다. 집계된 것만 <span class="hl">330여 명의 작곡가, 약 400곡</span>. 한 사람의 이름 네 글자가 이만큼 연주된 예는 음악사에 다시 없다.</p>
+  <table class="t">
+    <tr><th style="width:16mm">연도</th><th style="width:38mm">작곡가</th><th>B-A-C-H 오마주</th></tr>
+    <tr><td>1845</td><td>슈만</td><td>「B-A-C-H 주제에 의한 여섯 개의 푸가」 Op.60 — 클라라와 함께 바흐 대위법을 수련하던 해의 결실</td></tr>
+    <tr><td>1855</td><td><b>리스트</b></td><td>「B-A-C-H 주제에 의한 환상곡과 푸가」 — 오르간을 폭풍처럼 몰아치는 비르투오소의 경배</td></tr>
+    <tr><td>1856</td><td>브람스</td><td>푸가 A♭단조 WoO 8 — 스물세 살 청년의 습작 속 서명</td></tr>
+    <tr><td>1878</td><td>림스키코르사코프</td><td>「B-A-C-H 주제에 의한 여섯 개의 변주곡」</td></tr>
+    <tr><td>1928</td><td>쇤베르크</td><td>「관현악을 위한 변주곡」 Op.31 — 12음 기법의 한복판에 새긴 서명</td></tr>
+    <tr><td>1938</td><td>베베른</td><td>현악 4중주 Op.28 — 음렬 자체를 B-A-C-H로 설계</td></tr>
+    <tr><td>1964</td><td>아르보 페르트</td><td>「B-A-C-H 콜라주」 — 20세기의 소음 속에서 바흐를 호출</td></tr>
+  </table>
+  <p class="body">특히 리스트의 환상곡과 푸가는 이 계보의 정점이다. 경건한 인용이 아니라, 네 음을 화산처럼 폭발시키는 낭만주의식 경배 — 바흐의 서명이 헌정자의 언어로 얼마나 다르게 발음될 수 있는지 보여 준다. 그러니 이렇게 말해도 좋겠다. 죽은 지 276년, <b>바흐는 아직도 신곡에 참여하고 있다.</b> 이름 넉 자로.</p>
+
+  <div class="recipe" style="border-color:#FFB700">
+    <div class="rc-head" style="color:#C98A00">해독 연습 — 당신의 이름도 선율이 된다</div>
+    <p class="rc-ing" style="background:#FCF3DC"><b>규칙</b> A~G는 그대로, B=시♭ · H=시 · S(Es)=미♭ · 나머지 철자는 건너뛴다</p>
+    <ol class="rc-steps">
+      <li>이름을 로마자로 적는다 — 예: <b>DAISY</b>(데이지) → D·A·(I)·S·(Y) → <b>레-라-미♭</b>. 집밥연구소 데이지 진 님은 세 음짜리 모티프였다.</li>
+      <li>음이 되는 철자가 하나도 없다면? 낙심 금지 — 다음 회의 작곡가들이 우회하는 법을 알려 준다.</li>
+      <li>완성된 모티프를 흥얼거려 본다 — 다음 호에 독자 이름 암호를 악보로 실어 드린다. <span style="white-space:nowrap">제보: justice_park@kakao.com</span></li>
+    </ol>
+  </div>
+  <div class="memo" style="display:flex; align-items:center; gap:5mm;">
+    <img src="vol02w/music-buri.png" alt="부리 도니꼬" style="width:16mm; border-radius:12%; flex:none;">
+    <div><b>글: 부리 도니꼬(Buri Donicco)</b> — 음악당 지기<br><span style="color:#EC5B27"><b>다음 회</b> — 연인의 이름을 숨긴 사람들: 슈만의 아슈, 브람스의 아가테.</span></div>
+  </div>
+  <p class="src">참고: J. G. 발터 『음악사전』(1732) · 바흐 「푸가의 기법」 BWV 1080 · 슈만 Op.60 · 리스트 「B-A-C-H 환상곡과 푸가」(1855) · 쇤베르크 Op.31 · 베베른 Op.28 · 페르트 「콜라주」(1964)</p>
+  <div class="ft"><div class="who">부리의 명랑음악당 — 악보에도 근거를</div><div class="pg">19</div></div>
+</div>
+
+<!-- ═══════════ p.21-22 맥시멀리스트의 방 ═══════════ -->
+<div class="page">
+  <div class="rh"><div class="l"><b>신설 코너</b> <span>맥시멀리스트의 방 ①</span></div><div class="r">NEW · GADGET</div></div>
+  <div class="kicker kc-blue">NEW · 맥시멀리스트의 방 ① — 왕년의 '네이버 오늘의 블로거'가 다시 꺼내 든 리뷰 노트</div>
+  <h1 class="title">안경이 통역을 시작했다<br><span style="font-size:14pt; color:#6b6559">레이밴 메타 AI 글라스</span></h1>
+  <p class="body">근거로 세상을 읽는 게 이 잡지의 일이지만, 물건 앞에서는 언제나 호기심이 근거보다 빠르다. 그런 사람에게 2026년 여름은 조금 특별하다. 지난 5월 25일, 레이밴 메타와 오클리 메타 AI 글라스가 <span class="hl">한국에 정식 출시</span>됐다. 그리고 지난 7월 6일, <b>한국어 실시간 번역</b> 업데이트가 도착했다. 상대의 말을 안경 다리의 오픈이어 스피커가 우리말로 통역해 들려준다. 지원 언어는 6개에서 20개로. 해외 직구와 영어 메뉴를 감수하던 시절을 지나, 드디어 '내 언어로 쓰는' 스마트 글라스가 된 것이다. 편집장의 수집 서랍에도 한 자리가 생겼다.</p>
+  <div class="cols2" style="margin: 2mm 0 1mm;">
+    <figure style="flex:1.18; margin-bottom:1.5mm;"><img class="ph" style="height:44mm" src="vol02w/meta-hero.jpg" alt="레이밴 메타 개봉"><figcaption>안경원 상자, 가죽 케이스, 그리고 그냥 레이밴처럼 생긴 안경 (직접 촬영)</figcaption></figure>
+    <figure style="flex:1; margin-bottom:1.5mm;"><img class="ph" style="height:44mm" src="vol02w/meta-box.jpg" alt="구성품"><figcaption>구성품 — 브리지 높이별 노즈패드 교체 키트까지 들어 있다</figcaption></figure>
+  </div>
+  <p class="body">생김새는 그냥 레이밴이다. 웨이페어러 프레임에 1,200만 화소 초광각 카메라와 스피커, 마이크가 숨어 있다. 본 것을 그대로 찍고(3K 영상), 들은 것을 번역하고, "헤이 메타"라고 부르면 눈앞의 사물에 대해 답한다. 손이 자유롭다는 것 — 이것이 스마트폰과의 결정적 차이다. 자전거 위에서, 시장에서, 아이 손을 잡은 채로.</p>
+  <div class="cards">
+    <div class="card" style="border-color:#2E72B8"><div class="n" style="color:#2E72B8">20<sub>개</sub></div><div class="c">실시간 번역 지원 언어 — 2026.7 업데이트로 한국어 포함.</div></div>
+    <div class="card" style="border-color:#EC5B27"><div class="n" style="color:#EC5B27">$799</div><div class="c">윗급 '메타 레이밴 디스플레이'(미국) — 렌즈 속 화면+근전도 밴드. 국내 미출시.</div></div>
+    <div class="card" style="border-color:#7BA05B"><div class="n" style="color:#7BA05B">6<sub>시간</sub></div><div class="c">디스플레이 모델의 배터리 — "가장 착용할 만한, 그러나 아직 얼리어답터의 물건."</div></div>
+  </div>
+  <p class="body">물건을 오래 모아 온 사람의 직감으로 말하자면, 이 물건의 서사는 어디서 본 적이 있다. 시계가 그랬고 이어폰이 그랬다 — '굳이?'라는 반문과 함께 등장해, 어느 날 몸의 일부가 되어 있는 물건들. 안경은 이미 하루 종일 얼굴 위에 있다는 점에서 출발선이 다르다. 남은 질문은 기술이 아니라 예절이다. 카메라가 달린 안경과 마주 앉는 사회의 규칙을, 우리는 이제부터 만들어야 한다. 촬영 중 흰색 LED가 켜지도록 설계된 것이 그 규칙의 첫 문장일 것이다. 그렇다면 이 안경, 지금 쓸 만한 물건인가 — 직접 시험해 본 기록이 다음 장에 있다.</p>
+  <p class="src">출처: Meta 뉴스룸(2026.5) · 국내 보도(2026.7) · Road to VR</p>
+  <div class="ft"><div class="who">맥시멀리스트의 방 — 물건에도 근거를</div><div class="pg">20</div></div>
+</div>
+
+<div class="page">
+  <div class="rh"><div class="l"><b>신설 코너</b> <span>맥시멀리스트의 방 ①</span></div><div class="r">NEW · GADGET</div></div>
+  <div class="kicker kc-blue">NEW · 맥시멀리스트의 방 ① — 실사용 노트</div>
+  <h1 class="title" style="margin-bottom:3mm;">안경에게 토익을 맡겨 보았다<br><span style="font-size:14pt; color:#6b6559">그래서, 지금 살 만한가 — 편집장의 사용 후기</span></h1>
+  <div class="cols2" style="margin-top:1mm;">
+    <div style="flex:1">
+      <p class="body">실험은 소박하게 시작했다. 책상에 토익 문제집을 펴 놓고 안경에게 부탁했다. "헤이 메타, 지금 보고 있는 페이지의 문제를 풀어줘." 안경은 잠시 페이지를 내려다보더니 답을 불러 주기 시작했다. 151번은 (B), 152번은 (C). 목소리에는 망설임이 없었다.</p>
+      <p class="body">문제는 디테일이었다. 근거라며 읽어 주는 지문 속 고유명사들이 어딘가 낯설었다. 큰 제목은 곧잘 읽지만 본문의 잔글씨 앞에서는 정확도가 뚝 떨어지고, 못 읽은 자리는 그럴듯한 말로 메워 놓는다. 그리고 자신 없다는 말은 끝내 하지 않는다. <b>작은 글씨 텍스트 인식은 아직 이 안경의 약한 무릎이다.</b> 번역기로, 그러니까 글자를 읽는 눈으로 쓰기에는 아직 많이 모자라다. 이 완벽한 폼팩터에 다른 AI 모델을 끼워 쓸 수 있다면 얼마나 좋을까, 하는 생각이 자꾸 든다.</p>
+    </div>
+    <figure style="flex:0.42"><img class="ph" style="height:52mm" src="vol02w/meta-wear.jpg" alt="착용 컷"><figcaption>변색 렌즈를 끼운 실물 — 운동할 땐 선글라스 겸 이어폰이 된다</figcaption></figure>
+  </div>
+  <p class="body">다만 공정하게 적자면, 잘하는 일도 뚜렷하다. 이 안경 최대의 장점은 책상이 아니라 운동장에 있다 — <b>변색 렌즈를 끼워 운동할 때 쓰면 선글라스와 이어폰이 한 번에 해결되고, 운동 측정까지 된다.</b> 영어와 독일어로 시험해 본 실시간 동시통역은 기대보다 매끄러웠고, 걸으며 듣는 길안내도 편했다. 몸을 움직이는 동안, 이 안경은 이미 제 몫을 한다.</p>
+  <div class="cols2" style="margin: 2.5mm 0 1mm;">
+    <figure style="flex:1.25"><img class="ph" style="height:32mm" src="vol02w/meta-pov.jpg" alt="안경이 본 문제집"><figcaption style="margin:1.5mm 0 0;">안경이 본 것 — 문제집 앞에서 "헤이 메타" (안경 카메라 촬영)</figcaption></figure>
+    <figure style="flex:1"><img class="ph" style="height:32mm; object-fit:contain; background:#fff; border:1px solid #e6e0d6;" src="vol02w/meta-app.jpg" alt="토익 답안"><figcaption style="margin:1.5mm 0 0;">① 책상의 성적표 — 151 (B)·152 (C), 고유명사는 미심쩍다</figcaption></figure>
+    <figure style="flex:1"><img class="ph" style="height:32mm; object-fit:contain; background:#fff; border:1px solid #e6e0d6;" src="vol02w/meta-tr.jpg" alt="동시통역"><figcaption style="margin:1.5mm 0 0;">② 독일어↔영어 동시통역 — 기대보다 잘한다</figcaption></figure>
+    <figure style="flex:1"><img class="ph" style="height:32mm; object-fit:contain; background:#fff; border:1px solid #e6e0d6;" src="vol02w/meta-run.jpg" alt="운동 리포트"><figcaption style="margin:1.5mm 0 0;">③ 저녁 걷기 리포트 — 페이스·심박 정리</figcaption></figure>
+  </div>
+  <p class="body" style="margin-top:1.5mm;">그래서 이 물건을 서랍 안쪽에 넣을 생각은 없다. 방향은 맞다. 다만 지금 사는 것은 완성품이 아니라 예고편이라는 것. 맥시멀리스트는 예고편도 수집하는 사람이므로, 나는 기다리면서 쓰기로 했다.</p>
+  <div class="databox" style="padding:3mm 5mm; margin:2.5mm 0;"><h4>실사용 요약</h4><b>좋은 점</b> — 변색 렌즈+운동: 선글라스·이어폰·운동 측정을 안경 하나로 · 영·독 동시통역 준수 · 길안내 편리. <b>아쉬운 점</b> — 작은 글씨 텍스트 인식 · 문서 번역·독해는 아직. <b>한 줄 조언</b> — 운동하는 사람에게 먼저 권한다.</div>
+  <div class="quote" style="margin:1.5mm 0; padding:4mm 8mm;">명랑 한 줄 평 — 운동장에서는 이미 쓸 만한 미래,<br><span class="o">책상 앞에서는 아직 오는 중인 미래.</span></div>
+  <div class="memo" style="margin:2mm 0 1mm; padding:2.8mm 5mm;"><b>글: 편집장 박지민</b> — 물건은 호기심으로 들여다본다. 먼저 써 보고, 먼저 후회하고, 대신 알려 드린다. <span style="color:#a09a90">사진: 직접 촬영 · 메타 AI 앱 갈무리</span></div>
+  <div class="ft"><div class="who">맥시멀리스트의 방 — 물건에도 근거를</div><div class="pg">21</div></div>
+</div>
+
+<!-- ═══════════ p.17-18 집밥연구소 ═══════════ -->
+<div class="page">
+  <div class="rh"><div class="l"><b>신설 코너</b> <span>월간 집밥연구소 ①</span></div><div class="r">NEW · HOME COOKING</div></div>
+  <div class="kicker" style="color:#5C8A3C">NEW · 월간 집밥연구소 ① — 계절 채소 한 상</div>
+  <h1 class="title">집밥연구소 <span style="color:#5C8A3C">with 가지</span><br><span style="font-size:14pt; color:#6b6559">여름 가지 레시피 네 접시 · 글·요리 연구원 데이지 진</span></h1>
+  <p class="body">폭염 특집을 읽고 나면 저녁상 차리기가 더 아득해진다. 그래서 이번 호부터 밥상의 연구를 시작한다. 첫 손님은 여름의 채소, <b>가지</b> — 값싸고, 불 앞에 오래 서 있지 않아도 되고, 한여름의 몸에 순한 재료다. 연구원 데이지 진 님의 실험 기록을 사진과 함께 옮긴다.</p>
+
+  <div class="recipe">
+    <div class="rc-head"><span class="rc-no">①</span> 구운가지 쌈밥</div>
+    <div class="cols2">
+      <div style="flex:1.15">
+        <p class="rc-ing"><b>재료</b> 가지 2개, 깻잎 · <b>양념장</b> 간장(9), 물(2), 올리고당(1), 매실액(1), 참기름(1), 다진마늘(1), 고춧가루(2), 다진 대파와 양파, 통깨 넉넉히</p>
+        <ol class="rc-steps">
+          <li>가지를 썰어 기름 두른 후라이팬에 노릇하게 굽는다.</li>
+          <li>양념장을 만든다.</li>
+          <li><b>반드시 깻잎에 싸서 먹는다.</b></li>
+        </ol>
+      </div>
+      <div style="flex:1"><div class="polpair">
+        <div class="pol r1"><img src="vol02w/rice-ssam1.jpg" alt="쌈밥 준비"><div class="cap">구운 가지·양념장·깻잎</div></div>
+        <div class="pol r2"><img src="vol02w/rice-ssam2.jpg" alt="쌈밥 완성"><div class="cap">깻잎에 싸서, 한 입</div></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="recipe">
+    <div class="rc-head"><span class="rc-no">②</span> 가지구이 된장소스 덮밥</div>
+    <div class="cols2">
+      <div style="flex:1.15">
+        <p class="rc-ing"><b>재료</b> 가지 1개, 대파 약간, 청양고추 1개 · <b>양념장</b> 재래식 된장(1/2), 황설탕(1), 맛술(1), 진간장(1/2), 물(3), 후추·통깨 약간</p>
+        <ol class="rc-steps">
+          <li>가지를 약간 어슷하게 썬다. 대파와 청양고추는 잘게 다진다.</li>
+          <li>양념장을 만들고, 기름 두른 중불에 가지를 노릇하게 굽는다.</li>
+          <li>양념장을 가지 위에 골고루 끼얹어 자작하게 졸인다.</li>
+          <li>불을 끄고 잔열로 익힌 다음 밥 위에 가지런히 올린다.</li>
+        </ol>
+      </div>
+      <div style="flex:1"><div class="polpair one">
+        <div class="pol r3"><img src="vol02w/rice-doenjang.jpg" alt="된장소스 덮밥"><div class="cap">달걀후라이 얹어 완성</div></div>
+      </div></div>
+    </div>
+  </div>
+  <div class="ft"><div class="who">월간 집밥연구소 — 밥상에도 근거를</div><div class="pg">22</div></div>
+</div>
+
+<div class="page">
+  <div class="rh"><div class="l"><b>신설 코너</b> <span>월간 집밥연구소 ①</span></div><div class="r">NEW · HOME COOKING</div></div>
+  <div class="kicker" style="color:#5C8A3C">집밥연구소 with 가지 — 이어서</div>
+
+  <div class="recipe">
+    <div class="rc-head"><span class="rc-no">③</span> 가지솥밥</div>
+    <div class="cols2">
+      <div style="flex:1.15">
+        <p class="rc-ing"><b>재료</b> 가지 2개, 소고기 다짐육 150g, 쌀 1.5컵, 다진마늘 1/2T, 맛술 1/2T, 양조간장 2T, 올리브오일 1T, 대파 1/2대, 쪽파 약간 · <b>양념장</b> 쪽파 반줌, 고춧가루(1/2), 매실청(1), 양조간장(3), 물(1), 참기름</p>
+        <ol class="rc-steps">
+          <li>쌀은 1시간 전 미리 씻어 10분 물에 담갔다 물기를 뺀다.</li>
+          <li>소고기는 핏물 제거 후 다진마늘·맛술·양조간장(1T)으로 밑간하고, 가지는 길게 반 갈라 도톰하게 썰어 간장(1T)에 절인다.</li>
+          <li>파기름에 소고기를 볶다가 가지를 넣어 80%쯤 익힌다.</li>
+          <li>솥에 쌀과 물 1.2컵으로 밥을 짓고 — 끓으면 약불 15분 — 밥물이 줄면 볶아둔 가지를 올려 5분 뜸을 들인다. 양념장은 취향껏!</li>
+        </ol>
+      </div>
+      <div style="flex:1"><div class="polpair one">
+        <div class="pol r2"><img src="vol02w/rice-sot.jpg" alt="가지솥밥"><div class="cap">뜸이 다 든 가지솥밥 한 솥</div></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="recipe">
+    <div class="rc-head"><span class="rc-no">④</span> 가지나물비빔밥과 가지야채구이</div>
+    <div class="cols2">
+      <div style="flex:1.15">
+        <p class="rc-ing"><b>재료</b> 가지 2개, 다진마늘 1/2T, 다진대파 1T, 국간장 2T, 참기름 1T, 깨소금 약간</p>
+        <ol class="rc-steps">
+          <li>가지는 5~6분 냄비에 찐 뒤, 키친타올로 물기를 걷고 길게 찢는다.</li>
+          <li>다진마늘·다진대파·양념을 넣고 조물조물 무친다.</li>
+          <li>가지나물만 넣고 달걀후라이·고추장 얹어 비벼도 좋다. (버섯이나 하얗게 무친 콩나물을 더하면 더 맛있게!)</li>
+          <li><b>가지야채구이</b>는 다른 야채와 함께 소금·후추만으로 밑간해 에어프라이어에 10~15분 굽는다.</li>
+        </ol>
+      </div>
+      <div style="flex:1"><div class="polpair">
+        <div class="pol r1"><img src="vol02w/rice-bibim.jpg" alt="가지나물비빔밥"><div class="cap">가지나물비빔밥</div></div>
+        <div class="pol r3"><img src="vol02w/rice-veg.jpg" alt="가지야채구이"><div class="cap">가지야채구이</div></div>
+      </div></div>
+    </div>
+  </div>
+  <div class="memo"><b>연구 노트</b> — 가지는 기름을 만나면 부드러워지고, 된장·간장 같은 발효 양념과 특히 잘 어울린다. 다음 호의 재료는 데이지 진 님의 장바구니가 정한다. <span style="color:#5C8A3C"><span style="white-space:nowrap">제보·질문: justice_park@kakao.com</span></span></div>
+  <div class="memo"><b>글·요리·사진: 데이지 진</b> — 28년차 특수교사. 「집밥연구소」에 다정하고 단정한 식탁을 연재한다. 언젠가는 장애인 이야기와 이민·다문화, 그리고 책 이야기도 풀어놓고 싶다는 것이 본인의 귀띔.</div>
+  <div class="ft"><div class="who">월간 집밥연구소 — 밥상에도 근거를</div><div class="pg">23</div></div>
+</div>
+
+<!-- ═══════════ p.24 명랑 뷰티 ═══════════ -->
+<div class="page">
+  <div class="rh"><div class="l"><b>신설 코너</b> <span>명랑 뷰티 ① — 여름 특집</span></div><div class="r">NEW · BEAUTY</div></div>
+  <div class="kicker kc-amber">NEW · 명랑 뷰티 ① — 여름 특집</div>
+  <h1 class="title">무너지지 않는 여름<br><span style="font-size:14pt; color:#6b6559">땀의 계절, 화장을 지키는 1 : 3의 비율</span></h1>
+  <div class="cols2" style="gap:6mm">
+    <div style="flex:1.25">
+      <p class="body">아침 일곱 시의 정성이 정오의 땀 앞에서 허무하게 무너지는 계절이다. 그렇다고 맨얼굴로 나설 수는 없는 날들 — 여름의 답은 더 바르는 것이 아니라, <span class="hl">적게, 그러나 붙게</span> 바르는 것이다.</p>
+      <h2 class="sub">비율의 발견</h2>
+      <p class="body">열쇠는 파우치 속에 이미 있다. <b>재생크림</b>이다. 베이스 전에 얇게 펴 바르거나, 비비크림 혹은 파운데이션에 소량을 섞는다. 크림이 피부의 요철을 매끈하게 메워 주면 그 위의 화장은 쉽게 달아나지 않고, 두껍게 바르지 않아도 은은한 윤광이 돈다. 쿠션파라면 두드리기 전에 얇게 한 겹 — 그것으로 충분하다.</p>
+      <div class="databox"><h4>아티스트의 계량 — 1 : 3</h4>재생크림 <b>1</b>에 비비크림(또는 파운데이션) <b>3</b>. 계절과 피부 타입, 화장법에 따라 조금씩 가감한다.</div>
+      <h2 class="sub">아침의 다이어트</h2>
+      <p class="body">여름 아침의 기초는 가벼울수록 좋다. 세안 후 토너, 에센스, 크림 — 내 피부 타입에 맞는 것만 남기고 덜어낸다. 겹이 얇아야 화장도 얇게, 그리고 오래 간다.</p>
+      <h2 class="sub">밤의 의식</h2>
+      <p class="body">그리고 무엇보다 — 화장은 바르는 일보다 <b>지우는 일</b>이 중요하다. 저녁의 꼼꼼한 이중 세안.</p>
+    </div>
+    <div>
+      <figure><img class="ph" style="height:96mm" src="vol02w/beauty-pouch.jpg" alt="여름의 도구들"><figcaption>아티스트의 선반 — 여름의 도구들</figcaption></figure>
+    </div>
+  </div>
+  <div class="memo" style="display:flex; align-items:center; gap:5mm;">
+    <img src="vol02w/beauty-rb.jpg" alt="아르백" style="width:19mm; height:19mm; object-fit:cover; border-radius:50%; flex:none;">
+    <div><b>글·사진: 아르백</b> — 메이크업 아티스트. 수많은 얼굴의 여름을 지켜 온 손끝의 기록을 「명랑 뷰티」에 연재한다. <span style="color:#EC5B27">다음 호 — 가을 환절기, 들뜨지 않는 피부</span></div>
+  </div>
+  <div class="ft"><div class="who">명랑 뷰티 — 피부에도 근거를</div><div class="pg">24</div></div>
+</div>
+
+<!-- ═══════════ 표3 (뒷표지 안쪽) — 구독 안내 ═══════════ -->
+<div class="page cvx">
+  <div class="toplbl">SUBSCRIBE · 구독 안내</div>
+  <div class="rulebar"></div>
+  <h2 class="cvx-h" style="text-align:center; margin:14mm 0 6mm; font-size:22pt;">매달, 근거 있는 명랑을<br><span class="o">우편함이 아니라 메일함으로.</span></h2>
+  <p class="cvx-p" style="text-align:center; max-width:118mm; margin:0 auto 9mm;">「월간 명랑사회」는 종이와 웹으로 함께 발행됩니다.<br>홈페이지에서 이메일을 남겨 주시면, 매달 새 호가 나오는 날<br>뉴스레터로 소식을 보내 드립니다.<br>지난 호는 웹에서 언제든 무료로 읽을 수 있습니다.</p>
+  <div style="display:flex; align-items:center; justify-content:center; gap:10mm; margin: 0 0 10mm;">
+    <img src="vol02w/qr.png" style="width:34mm; height:34mm; border:1px solid #C9B490; border-radius:4px;">
+    <div style="font-size:10.5pt; line-height:1.8; color:#4A2E14;">
+      <b style="font-size:13pt; color:#3A2208;">www.myeongrang.org</b><br>
+      구독 신청 · 전 호 열람 · PDF 내려받기<br>
+      <span style="font-size:9pt; color:#A0724A;">문의 justice_park@kakao.com</span>
+    </div>
+  </div>
+  <div class="rulebar thin"></div>
+  <div style="font-size:8pt; letter-spacing:.22em; color:#A0724A; font-weight:700; margin:4mm 0 3mm;">지난 호 ARCHIVE</div>
+  <table class="mast">
+    <tr><td class="k">VOL.01 · 2026.06</td><td><b>청년은 정말 결혼을 포기했을까</b> — 마음이 아니라 조건을 물었던 창간호</td></tr>
+    <tr><td class="k">VOL.02 · 2026.07</td><td><b>폭염은 평등하지 않다</b> — 같은 35도, 다른 여름 (이번 호)</td></tr>
+  </table>
+  <div class="cvx-foot"><span>사회를 명랑하게, 근거로 말합니다</span><img src="vol02w/symbol.png" style="width:12mm;"></div>
+</div>
+
+<!-- ═══════════ p.25 NEXT + 판권 ═══════════ -->
+<div class="page">
+  <div class="rh"><div class="l"><b>월간 명랑사회</b> <span>VOL.02 · 2026.07</span></div><div class="r">다음 호 / NEXT</div></div>
+  <div class="kicker">다음 호 예고 · VOL.03 (2026년 8월)</div>
+  <h1 class="title">내 삶을,<br>공유할 수 있는가</h1>
+  <p class="body" style="color:#EC5B27; font-weight:700; margin-top:-2mm;">이 질문에서 시작된 마을 — 스칸디나비아 시니어 코하우징</p>
+  <p class="body">은퇴하기 전에 이웃을 만나 취미와 밥상을 공유하고, 함께 살 집은 국가가 거듭니다. 스웨덴·핀란드·덴마크가 30년 넘게 가꿔 온 시니어 코하우징 — 8월호 특집 <b>「이웃부터 짓다」</b>가 이 질문에 법령과 데이터로 답합니다. 그리고 그 곁의 코너들도 저마다 다음 이야기를 물고 어김없이 돌아옵니다 — 무엇이 실릴지는 책을 펴는 날의 즐거움으로 남겨 둡니다. 하나만 미리 귀띔하자면, 벽을 오르는 사람들의 세계 — <b>클라이밍 이야기</b>가 준비되고 있습니다.</p>
+
+  <div class="nx-card">
+    <div class="tx">
+      <div class="k">창간 특집 연재 · 일본 미술기행 ③</div>
+      <h3>론 뮤익</h3>
+      <p>도쿄 모리미술관. 18년 만의 일본 대규모 개인전, 극사실 조각 11점. 사람보다 훨씬 크거나 훨씬 작은 몸들 앞에서 — 크기가 만드는 정서에 관하여, 한 사람의 관람자로 따라간다.</p>
+    </div>
+    <img src="vol02w/mueck.jpg" alt="모리미술관 론 뮤익전">
+  </div>
+
+  <div class="nx-slogan">좋은 사회는 좋은 질문에서 시작되고,<br><span class="o">정직한 데이터</span>로 단단해집니다.</div>
+
+  <div class="colo">
+    <b>월간 「명랑사회」 · VOL.02 · 2026년 7월</b><br>
+    발행 명랑사회연구소 · 발행인·편집장 박지민 · justice_park@kakao.com · www.myeongrang.org<br>
+    발행인은 명랑사회연구소 소장이자 ㈜지피에스 대표이사로, 이학·법학 학사와 예술행정학·사회복지학 석사를 마쳤으며 MBTI분석전문가·인공지능(AI)전문가·음악심리상담사·인지행동심리상담사·스포츠재활처방사(각 1급)와 국외여행인솔자 자격을 갖고 있다.<br>
+    자료 출처 질병관리청 온열질환 응급실감시체계(2025), 가구에너지패널조사 13차 마이크로데이터(연구소 자체 분석 — 인용 시 출처 표기), 산업통상자원부·한국에너지공단 에너지바우처(2026)<br>
+    사진(피카소전·국립신미술관·모리미술관) 명랑사회연구소 직접 촬영 · 작품 저작권 © Succession Picasso<br>
+    집밥연구소 글·요리·사진 데이지 진 · 부리의 명랑음악당 글 부리 도니꼬 · 명랑 뷰티 글·사진 아르백<br>
+    © 2026 명랑사회연구소. 본지의 분석과 해석에 대한 책임은 연구소에 있습니다.
+    <img class="sym" src="vol02w/symbol.png" alt="명랑사회연구소 심볼">
+  </div>
+  <div class="ft"><div class="who">명랑사회연구소 · 사회를 명랑하게, 근거로 말합니다</div></div>
+</div>
+
+
+<div style="text-align:center;color:#8a857c;font-size:12.5px;padding:8px 16px 44px;line-height:1.8;">
+월간 「명랑사회」 VOL.02 · 2026년 7월 · 명랑사회연구소<br>
+<a href="vol02.html" style="color:#C23A10;font-weight:700;text-decoration:none;">지면으로 보기</a> · <a href="myeongrang-vol02.pdf" style="color:#C23A10;font-weight:700;text-decoration:none;">PDF로 내려받기</a><br><br>
+<a href="index.html" style="color:#C23A10;font-weight:700;text-decoration:none;">← 명랑사회연구소 홈으로</a>
+</div>
+</body>
+</html>

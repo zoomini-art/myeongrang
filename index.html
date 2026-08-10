@@ -366,7 +366,7 @@ footer{background:var(--ink);color:#fff;padding:4.5rem 0 2.2rem}
       {vol:'VOL.02', label:'7월호', month:'2026-07',
        title:'폭염은 평등하지 않다',
        desc:"같은 35도 아래에서도 여름은 평등하지 않습니다. 2025년 온열질환자 4,460명 — 죽음은 나이·일·주거·소득의 구조를 따라 정확하게 쏠립니다. 6,311가구의 에너지패널 데이터로 '보유는 평등해진 에어컨, 사용은 불평등한 서늘함'을 추적하고, 에너지바우처가 멈춰 서는 문턱까지 걸어갑니다. 무릎과 바흐와 가지와 레이밴 메타 — 새 코너 일곱도 함께 문을 엽니다.",
-       cover:'vol02-cover.jpg', page:'vol02.html'},
+       cover:'vol02-cover.jpg', page:'vol02.html', web:'vol02w.html'},
       {vol:'VOL.03', month:'2026-08', planned:'내 삶을, 공유할 수 있는가<br>(8월 준비 중)'},
       {vol:'VOL.04', month:'2026-09', planned:'2026.09 준비 중'},
       {vol:'VOL.05', month:'2026-10', planned:'2026.10 준비 중'}
@@ -380,7 +380,8 @@ footer{background:var(--ink);color:#fff;padding:4.5rem 0 2.2rem}
         '<div class="mag-info">'+
           '<span class="badge" style="background:var(--yellow);color:var(--ink)">'+f.vol+(f.label?' · '+f.label:'')+'</span>'+
           '<h3>'+f.title+'</h3><p>'+f.desc+'</p>'+
-          '<div class="mag-actions"><a href="'+f.page+'" class="btn btn-primary">바로 보기 →</a>'+
+          '<div class="mag-actions"><a href="'+(f.web||f.page)+'" class="btn btn-primary">'+(f.web?'&#128241; 웹진으로 읽기 →':'바로 보기 →')+'</a>'+
+          (f.web?'<a href="'+f.page+'" class="btn-line">지면으로 보기</a>':'')+
           '<a href="subscribe.html" class="btn-line">구독 신청</a></div></div>';
       const rest=ISSUES.filter(x=>x!==f).sort((a,b)=>a.month.localeCompare(b.month));
       document.getElementById('magGrid').innerHTML=rest.map(x=>
@@ -458,7 +459,7 @@ filters.addEventListener('click',e=>{
   <div style="height:5px;display:flex"><i style="flex:1;background:#EC5B27"></i><i style="flex:1;background:#1B66F3"></i><i style="flex:1;background:#FFB700"></i><i style="flex:1;background:#49D3C4"></i></div>
   <button id="mrPopX" aria-label="닫기" style="position:absolute;top:12px;right:10px;border:0;background:none;font-size:20px;line-height:1;color:#8a857c;cursor:pointer;padding:6px">&times;</button>
   <div style="display:flex;gap:14px;padding:18px 18px 14px;align-items:center">
-    <a href="vol02.html" style="flex:none"><img src="vol02-cover.jpg" alt="7월호 표지" style="width:86px;border-radius:8px;border:1px solid #e2dccf;display:block"></a>
+    <a href="vol02w.html" style="flex:none"><img src="vol02-cover.jpg" alt="7월호 표지" style="width:86px;border-radius:8px;border:1px solid #e2dccf;display:block"></a>
     <div style="min-width:0">
       <div style="font-size:11px;font-weight:700;letter-spacing:.14em;color:#EC5B27;margin-bottom:4px">NEW · VOL.02</div>
       <div style="font-size:16.5px;font-weight:800;line-height:1.35">7월호가 나왔습니다<br>「폭염은 평등하지 않다」</div>
@@ -466,7 +467,7 @@ filters.addEventListener('click',e=>{
     </div>
   </div>
   <div style="display:flex;gap:8px;padding:0 18px 16px">
-    <a href="vol02.html" style="flex:1;text-align:center;background:#EC5B27;color:#fff;text-decoration:none;font-weight:700;font-size:13.5px;padding:11px 0;border-radius:999px">지금 읽기 →</a>
+    <a href="vol02w.html" style="flex:1;text-align:center;background:#EC5B27;color:#fff;text-decoration:none;font-weight:700;font-size:13.5px;padding:11px 0;border-radius:999px">지금 읽기 →</a>
     <button id="mrPopLater" style="flex:none;border:1px solid #d9d2c4;background:none;color:#6b6559;font-size:12.5px;padding:0 14px;border-radius:999px;cursor:pointer">7일간 보지 않기</button>
   </div>
 </div>
