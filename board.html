@@ -196,7 +196,7 @@ footer{background:var(--ink);color:#fff;padding:4.5rem 0 2.2rem}
         <!-- 댓글 쓰기 -->
         <div class="quick-ask" style="margin-top:1.8rem;padding-top:1.6rem">
           <h3>댓글 남기기</h3>
-          <div class="w-row">
+          <div class="w-row" id="cMeta">
             <div class="w-field"><label>이름</label><input type="text" id="cAuthor" maxlength="24" placeholder="이름 또는 별명"></div>
             <div class="w-field"><label>비밀번호 <small style="font-weight:400;color:var(--ink-soft)">(수정·삭제용, 4자 이상)</small></label><input type="password" id="cPw" maxlength="30"></div>
           </div>
@@ -219,7 +219,7 @@ footer{background:var(--ink);color:#fff;padding:4.5rem 0 2.2rem}
         </div>
         <div class="w-field"><label>제목</label><input type="text" id="wTitle" maxlength="120" placeholder="제목을 입력하세요"></div>
         <div class="w-field"><label>내용</label><textarea id="wBody" rows="6" maxlength="8000" placeholder="내용을 입력하세요 (연락이 필요하면 이메일·전화번호를 함께 적어주세요)"></textarea></div>
-        <div class="w-row">
+        <div class="w-row" id="wMeta">
           <div class="w-field"><label>이름</label><input type="text" id="wAuthor" maxlength="24" placeholder="이름 또는 별명"></div>
           <div class="w-field"><label>비밀번호 <small style="font-weight:400;color:var(--ink-soft)">(수정·삭제용, 4자 이상)</small></label><input type="password" id="wPw" maxlength="30"></div>
         </div>
@@ -367,16 +367,16 @@ async function submitPost(){
     p_category:document.getElementById('wCat').value,
     p_title:document.getElementById('wTitle').value.trim(),
     p_body:document.getElementById('wBody').value.trim(),
-    p_author:document.getElementById('wAuthor').value.trim(),
-    p_pw:document.getElementById('wPw').value,
+    p_author:adminPw?'명랑사회연구소':document.getElementById('wAuthor').value.trim(),
+    p_pw:adminPw?('adm-'+Math.random().toString(36).slice(2,10)):document.getElementById('wPw').value,
     p_private:document.getElementById('wPrivate').checked,
     p_admin_pw:adminPw,
     p_board:BOARD
   };
   if(!args.p_title){toast('제목을 입력해 주세요.');return;}
   if(!args.p_body){toast('내용을 입력해 주세요.');return;}
-  if(!args.p_author){toast('이름을 입력해 주세요.');return;}
-  if(args.p_pw.length<4){toast('비밀번호는 4자 이상 입력해 주세요.');return;}
+  if(!adminPw&&!args.p_author){toast('이름을 입력해 주세요.');return;}
+  if(!adminPw&&args.p_pw.length<4){toast('비밀번호는 4자 이상 입력해 주세요.');return;}
   const btn=document.getElementById('wSubmit');btn.disabled=true;
   try{
     const res=await rpc('board_write',args);
@@ -393,14 +393,14 @@ async function submitComment(){
   if(!currentPost)return;
   const args={
     p_post_id:currentPost.id,
-    p_author:document.getElementById('cAuthor').value.trim(),
+    p_author:adminPw?'명랑사회연구소':document.getElementById('cAuthor').value.trim(),
     p_body:document.getElementById('cBody').value.trim(),
-    p_pw:document.getElementById('cPw').value,
+    p_pw:adminPw?('adm-'+Math.random().toString(36).slice(2,10)):document.getElementById('cPw').value,
     p_admin_pw:adminPw
   };
-  if(!args.p_author){toast('이름을 입력해 주세요.');return;}
+  if(!adminPw&&!args.p_author){toast('이름을 입력해 주세요.');return;}
   if(!args.p_body){toast('내용을 입력해 주세요.');return;}
-  if(args.p_pw.length<4){toast('비밀번호는 4자 이상 입력해 주세요.');return;}
+  if(!adminPw&&args.p_pw.length<4){toast('비밀번호는 4자 이상 입력해 주세요.');return;}
   const btn=document.getElementById('cSubmit');btn.disabled=true;
   try{
     const res=await rpc('board_comment',args);
@@ -454,6 +454,9 @@ function setAdminUI(on){
   const b=document.getElementById('adminBtn');
   b.textContent=on?'관리자 모드 ✓ (끄기)':'관리자';
   b.classList.toggle('on',on);
+  const wm=document.getElementById('wMeta'),cm=document.getElementById('cMeta');
+  if(wm)wm.style.display=on?'none':'';
+  if(cm)cm.style.display=on?'none':'';
   const sel=document.getElementById('wCat');
   let opt=sel.querySelector('option[value="공지사항"]');
   if(on&&!opt){opt=document.createElement('option');opt.value='공지사항';opt.textContent='공지사항 (관리자)';sel.appendChild(opt);}
