@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>아티클 | 명랑사회연구소 — 데이터로 읽는 사회</title>
+<meta name="description" content="명랑사회연구소의 아티클 아카이브. 월간 명랑사회에 실린 특집 에세이·연구 아티클·칼럼을 웹에서 읽습니다. 폭염 불평등, 저출생, 문화예술 — 사회를 명랑하게, 근거로 말합니다.">
+<link rel="canonical" href="https://www.myeongrang.org/articles.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.myeongrang.org/articles.html">
+<meta property="og:title" content="아티클 | 명랑사회연구소">
+<meta property="og:description" content="데이터로 읽는 사회 — 월간 명랑사회의 글을 웹에서 읽습니다.">
+<meta property="og:image" content="https://www.myeongrang.org/og-image.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1B66F3;--yellow:#FFB700;--orange:#FF510F;--teal:#49D3C4;--bg:#EDEDED;--paper:#FFFFFF;--ink:#1C2128;--ink-soft:#5C6470;--line:rgba(28,33,40,.12)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
+.wrap{max-width:1180px;margin:0 auto;padding:0 2rem}
+.pp{font-family:'Poppins',sans-serif}
+.sym-img{background:url(icon-512.png) center/contain no-repeat}
+nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(237,237,237,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:.8rem 2rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.brand .sym-img{width:40px;height:40px;flex-shrink:0}
+.brand .nm{display:flex;flex-direction:column;line-height:1.05}
+.brand .nm b{font-weight:900;font-size:1.12rem;color:var(--ink)}
+.brand .nm small{font-family:'Poppins';font-size:.58rem;letter-spacing:.16em;color:var(--orange);font-weight:600}
+.navlinks{list-style:none;display:flex;gap:2rem;align-items:center}
+.navlinks a{text-decoration:none;color:var(--ink-soft);font-size:.92rem;font-weight:500}
+.navlinks a:hover{color:var(--ink)}
+.navcta{background:var(--orange);color:#fff!important;padding:.5rem 1.15rem;border-radius:999px;font-size:.86rem}
+.navghost{border:1.5px solid var(--orange);color:var(--orange)!important;padding:.45rem 1.05rem;border-radius:999px;font-size:.86rem;font-weight:600}
+.burger{display:none;background:none;border:0;font-size:1.5rem;cursor:pointer;color:var(--ink)}
+@media(max-width:760px){.navlinks{position:fixed;inset:60px 0 auto 0;flex-direction:column;background:var(--bg);padding:1.4rem 2rem;gap:1.1rem;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .35s}.navlinks.open{transform:none}.burger{display:block}}
+.page-head{padding:8rem 0 2.5rem}
+.page-head .sec-tag{color:var(--blue);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;font-family:'Poppins'}
+.page-head h1{font-size:clamp(1.9rem,4vw,2.6rem);font-weight:900;letter-spacing:-.02em;margin:.4rem 0 .8rem}
+.page-head p{color:var(--ink-soft);max-width:660px}
+.list{background:var(--paper);padding:3.5rem 0 5rem}
+.grid{max-width:1180px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.4rem}
+.card{display:block;background:var(--bg);border-radius:18px;padding:1.9rem 2rem;text-decoration:none;color:var(--ink);border-top:5px solid var(--c,var(--blue));transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 24px 44px -26px rgba(28,33,40,.4)}
+.ctag{display:inline-block;font-size:.72rem;font-weight:700;color:#fff;background:var(--c);padding:.2rem .7rem;border-radius:999px;margin-bottom:.8rem}
+.card h2{font-size:1.18rem;font-weight:800;line-height:1.4;margin-bottom:.3rem}
+.csub{font-size:.9rem;color:var(--orange);font-weight:600;margin-bottom:.6rem}
+.cdesc{font-size:.9rem;color:var(--ink-soft);margin-bottom:1rem}
+.cmeta{font-size:.76rem;color:var(--ink-soft)}
+.cta{background:var(--ink);padding:3.5rem 0;text-align:center;color:#fff}
+.cta h2{font-size:1.5rem;font-weight:900;margin-bottom:.6rem}
+.cta p{color:rgba(255,255,255,.72);margin-bottom:1.5rem}
+.btn{display:inline-flex;padding:.85rem 1.7rem;border-radius:999px;font-weight:700;font-size:.95rem;text-decoration:none;background:var(--orange);color:#fff;box-shadow:0 10px 22px -8px rgba(255,81,15,.6)}
+footer{background:var(--ink);color:#fff;padding:3.5rem 0 2rem;border-top:1px solid rgba(255,255,255,.1)}
+.f-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.82rem;color:rgba(255,255,255,.5)}
+footer .links a{color:rgba(255,255,255,.75);text-decoration:none;margin-right:1.2rem;font-size:.9rem}
+</style>
+</head>
+<body id="top">
+<nav>
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="sym-img"></span><span class="nm"><b>명랑사회연구소</b><small>MYEONGRANG SOCIAL INSTITUTE</small></span></a>
+    <button class="burger" id="burger" aria-label="메뉴">&#9776;</button>
+    <ul class="navlinks" id="navlinks">
+      <li><a href="index.html#about">소개</a></li>
+      <li><a href="articles.html">아티클</a></li>
+      <li><a href="index.html#pubs">연구 현황</a></li>
+      <li><a href="board.html" class="navghost">협업·문의 게시판</a></li>
+      <li><a href="together.html" class="navcta">함께하기 게시판</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <span class="sec-tag">Articles · 데이터로 읽는 사회</span>
+    <h1>아티클</h1>
+    <p>월간 「명랑사회」에 실린 특집 에세이·연구 아티클·칼럼을 웹에서 읽습니다. 매달 하나의 사회적 질문을 데이터로 풀어냅니다 — <em>사회를 명랑하게, 근거로 말합니다.</em></p>
+  </div>
+</header>
+
+<section class="list">
+  <div class="grid">
+      <a class="card" href="summer-inequality.html" style="--c:var(--orange)">
+        <span class="ctag">특집 에세이</span>
+        <h2>같은 35도, 다른 여름</h2>
+        <p class="csub">데이터로 읽는 더위 불평등</p>
+        <p class="cdesc">폭염은 모두에게 같은 강도로 닥치지 않는다. 온열질환 통계로 위험이 나이·일·주거·소득을 따라 쏠리는 구조를 읽는다.</p>
+        <span class="cmeta">VOL.02 · 2026.07 · 명랑사회연구소</span>
+      </a>
+      <a class="card" href="air-appropriation.html" style="--c:var(--blue)">
+        <span class="ctag">연구 아티클</span>
+        <h2>대기의 전유와 더위 불평등</h2>
+        <p class="csub">폭염을 수탈의 문제로 읽기</p>
+        <p class="cdesc">냉방은 실내의 열을 바깥 대기로 옮기는 행위다. 공유 자원인 대기의 사적 전유라는 관점에서 더위 불평등을 분석한다.</p>
+        <span class="cmeta">VOL.02 · 2026.07 · 명랑사회연구소</span>
+      </a>
+      <a class="card" href="mind-to-conditions.html" style="--c:#7B61FF">
+        <span class="ctag">칼럼</span>
+        <h2>'마음'을 묻는 정책에서 '조건'을 묻는 정책으로</h2>
+        <p class="csub">포기 서사가 가리는 것</p>
+        <p class="cdesc">미혼 청년 12,823명의 데이터는 출산 포기가 아니라 조건의 문제를 가리킨다. 저출생 정책의 질문을 바꾸자는 제안.</p>
+        <span class="cmeta">VOL.01 · 2026.06 · 명랑사회연구소</span>
+      </a>
+      <a class="card" href="founding-note.html" style="--c:#1FA45B">
+        <span class="ctag">발간사</span>
+        <h2>좋은 사회는 좋은 질문에서 시작됩니다</h2>
+        <p class="csub">창간호 발간사</p>
+        <p class="cdesc">'명랑'은 억지 낙관이 아니라 정직한 데이터가 주는 단단함이다. 연구소가 월간지를 창간하며 던지는 첫 질문.</p>
+        <span class="cmeta">VOL.01 · 2026.06 · 명랑사회연구소</span>
+      </a>
+      <a class="card" href="picasso-paul-smith.html" style="--c:var(--teal)">
+        <span class="ctag">연재 · 미술기행</span>
+        <h2>거장을 보는 또 하나의 눈</h2>
+        <p class="csub">피카소 meets 폴 스미스 전시 리뷰</p>
+        <p class="cdesc">폴 스미스가 공간째 재해석한 피카소전 관람기. 큐레이션이 곧 비평이 되는 순간에 대하여.</p>
+        <span class="cmeta">VOL.02 · 2026.07 · 명랑사회연구소</span>
+      </a>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>다음 글을 이메일로 받아보세요</h2>
+    <p>월간 「명랑사회」를 구독하면 새 호와 아티클을 가장 먼저 보내드립니다. 무료입니다.</p>
+    <a href="subscribe.html" class="btn">구독하기 →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="links" style="margin-bottom:1.2rem"><a href="index.html">홈</a><a href="board.html">협업·문의</a><a href="together.html">함께하기</a><a href="subscribe.html">구독하기</a></div>
+    <div class="f-bot"><span>© 2026 명랑사회연구소 · 대구광역시 서구 염색공단로 20 GPS BLDG 202</span><span class="pp">Operated by GPS Co., Ltd.</span></div>
+  </div>
+</footer>
+<script>document.getElementById('burger').addEventListener('click',()=>document.getElementById('navlinks').classList.toggle('open'));</script>
+</body>
+</html>
