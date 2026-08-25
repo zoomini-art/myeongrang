@@ -260,7 +260,7 @@ const ERR={
   bad_author:'이름을 확인해 주세요 (1~24자).'
 };
 let POSTS=[];
-let adminPw=sessionStorage.getItem('mr_admin')||null;
+let adminPw=localStorage.getItem('mr_admin')||null;
 let currentPost=null;
 
 async function rpc(fn,args){
@@ -437,7 +437,7 @@ async function deleteComment(cid){
 /* ---------- 관리자 ---------- */
 async function toggleAdmin(){
   if(adminPw){
-    adminPw=null;sessionStorage.removeItem('mr_admin');
+    adminPw=null;localStorage.removeItem('mr_admin');
     setAdminUI(false);toast('관리자 모드를 종료했습니다.');return;
   }
   const pw=prompt('관리자 비밀번호를 입력하세요.');
@@ -445,7 +445,7 @@ async function toggleAdmin(){
   try{
     const ok=await rpc('board_is_admin',{p_admin_pw:pw});
     if(ok===true){
-      adminPw=pw;sessionStorage.setItem('mr_admin',pw);
+      adminPw=pw;localStorage.setItem('mr_admin',pw);
       setAdminUI(true);toast('관리자 모드가 켜졌습니다. 공지 작성·전체 삭제·비밀글 열람이 가능합니다.');
     }else toast('비밀번호가 일치하지 않습니다.');
   }catch(e){toast('확인에 실패했습니다.');}
