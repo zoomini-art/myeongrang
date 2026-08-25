@@ -34,7 +34,7 @@ nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:
 .brand .nm b{font-weight:900;font-size:1.12rem;color:var(--ink);letter-spacing:-.01em}
 .brand .nm small{font-family:'Poppins';font-size:.58rem;letter-spacing:.16em;color:var(--orange);font-weight:600}
 .navlinks{list-style:none;display:flex;gap:2rem;align-items:center}
-.navlinks a{text-decoration:none;color:var(--ink-soft);font-size:.92rem;font-weight:500;transition:color .2s;position:relative}
+.navlinks a{white-space:nowrap;text-decoration:none;color:var(--ink-soft);font-size:.92rem;font-weight:500;transition:color .2s;position:relative}
 .navlinks a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--orange);transition:width .25s}
 .navlinks a:hover{color:var(--ink)}.navlinks a:hover::after{width:100%}
 .navcta{background:var(--orange);color:#fff!important;padding:.5rem 1.15rem;border-radius:999px;font-size:.86rem}
@@ -62,7 +62,7 @@ footer{background:var(--ink);color:#fff;padding:4.5rem 0 2.2rem}
 .f-col a:hover{color:#fff}
 .f-bot{border-top:1px solid rgba(255,255,255,.14);padding-top:1.8rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.82rem;color:rgba(255,255,255,.5)}
 
-@media(max-width:760px){
+@media(max-width:1080px){
   .navlinks{position:fixed;inset:60px 0 auto 0;flex-direction:column;background:var(--bg);padding:1.4rem 2rem;gap:1.1rem;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .35s}
   .navlinks.open{transform:none}
   .burger{display:block}
